@@ -1,2 +1,5 @@
 # VisualNovel
-Visual Novel by Emma, Lisa, Mia
+## Team
+* Emma
+* Lisa
+* Mia
