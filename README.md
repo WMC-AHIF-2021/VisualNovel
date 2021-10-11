@@ -1,4 +1,3 @@
-![Fuchs](Fox.png)
 # Visual Novel
 
 ## Project Description
@@ -32,7 +31,6 @@ Potential Risks
 
 ## Team
  
-* Emma Walchshofer
-* Lisa Pichler
-* Mia Marceta
-
+* Emma Walchshofer (art, story, history of VisualNovels)
+* Lisa Pichler (Team-leader, story, charcter description)
+* Mia Marceta (art, story, Story description)
