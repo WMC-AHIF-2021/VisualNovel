@@ -5,7 +5,7 @@
 * Static Part 
    * The static part of our website will be about the game  you will be able to play. There's going to be a description of the story and the characters.
 * Interactive Part
-  * The interactive part will be the game we are going to create. It will have a small story which can have different turns and endings based on the descisons the player makes.
+  * The interactive part will be the game we are going to create. It will have a small story which can have different turns and endings based on the decisions the player makes.
 
 ## Goals
 * creating a fun game 
