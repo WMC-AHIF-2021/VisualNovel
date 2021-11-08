@@ -11,7 +11,7 @@
 * creating a fun game 
 * making the game have decent graphics
 
-## Enviormental Analysis, Risks and Showstoppers
+## Enviromental Analysis, Risks and Showstoppers
 Audience Group
  * generally people of all ages who enjoy playing games
 
