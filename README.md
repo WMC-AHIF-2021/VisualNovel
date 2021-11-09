@@ -33,4 +33,4 @@ Potential Risks
  
 * Emma Walchshofer (art, story, history of visual novels)
 * Lisa Pichler (Team-leader, story, character description)
-* Mia Marceta (art, story, story description)
+* Mia Marceta (art, proofreading, story description)
