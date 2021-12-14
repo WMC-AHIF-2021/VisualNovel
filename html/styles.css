@@ -1,0 +1,14 @@
+body{
+    background-image: url("../baum.png");
+    opacity: 85;
+}
+
+.whiteBox
+{
+    background-color: rgba(245, 245, 245, 0.664);
+    margin: 2em;
+}
+
+.margin{
+    margin: 2em;
+}
