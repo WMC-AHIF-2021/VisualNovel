@@ -12,3 +12,7 @@ body{
 .margin{
     margin: 2em;
 }
+.centered
+{
+    text-align: center;
+}
