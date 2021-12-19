@@ -1,0 +1,43 @@
+body{
+    background: url(images/baum.png);
+    background-size: 800px 700px;
+    opacity: 85%;
+    
+}
+
+.whiteBox
+{
+    background-color: rgba(245, 245, 245, 0.664);
+    margin: 2em;
+}
+
+.margin{
+    margin: 2em;
+}
+.centered
+{
+    text-align: center;
+}
+
+.indexTitle{
+    position: relative;
+    top: 4em;
+    text-align: center;
+    color:rgb(63, 84, 102);
+    font-family:papyrus,fantasy;
+    font-size: 3em;
+}
+
+button{ 
+    position: relative;
+    float: left;
+    text-decoration: rgb(73, 90, 105);
+    background-color: rgba(61, 68, 60, 0.822);
+    left: 34em;
+    top: 13em;
+    margin-right:2em;
+    width: 8em;
+   
+}
+
+
