@@ -1,5 +1,6 @@
 body{
-    background-image: url("../baum.png");
+    background-image: url("../images/baum.png");
+    background-size: 55em;
     opacity: 85;
 }
 
