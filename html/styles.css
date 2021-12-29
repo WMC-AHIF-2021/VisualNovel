@@ -1,41 +1,41 @@
-body{
+body {
     background-image: url("../images/baum.png");
-    background-size: 55em;
+    background-size: cover;
+    background-attachment:fixed;
+    background-repeat: no-repeat;
     opacity: 85;
 }
 
-.whiteBox
-{
+.whiteBox {
     background-color: rgba(245, 245, 245, 0.664);
-    margin: 2em;
-    padding-bottom: 20em;
+    margin:10em;
+    /*padding-bottom: 20em;*/
 }
 
-.margin{
+.margin {
     margin: 2em;
 }
-.centered
-{
+
+.centered {
     text-align: center;
 }
 
-.indexTitle{
-    position: relative;
+.indexTitle {
+
     top: 3em;
     text-align: center;
-    color:rgb(63, 84, 102);
-    font-family:papyrus,fantasy;
+    color: rgb(63, 84, 102);
+    font-family: papyrus, fantasy;
     font-size: 3em;
 }
 
-button{ 
-    position: relative;
-    float: left;
+button {
+
+    display: inline-block;
     text-decoration: rgb(73, 90, 105);
     background-color: rgba(61, 68, 60, 0.822);
     left: 30em;
     top: 11em;
-    margin-right:2em;
+    margin-right: 2em;
     width: 8em;
-   
 }
