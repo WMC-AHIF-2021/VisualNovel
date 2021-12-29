@@ -3,12 +3,38 @@ body {
     background-size: cover;
     background-attachment:fixed;
     background-repeat: no-repeat;
+    font-family: Candara, fantasy;
     opacity: 85;
 }
+.navigationBar {
+    list-style-type: none;
+    margin: -0.5em;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgb(96, 84, 94);
+}
+
+li {
+    padding-left: 2em ;
+    padding-right: 2em;
+    float: left;
+}
+
+li a {
+    display: block;
+    color: rgb(204, 232, 225);
+    text-align: center;
+    padding: 25px;
+    text-decoration: none;
+}
+li a:hover {
+    background-color: rgb(74, 15, 57);
+}
+
 
 .whiteBox {
     background-color: rgba(245, 245, 245, 0.664);
-    margin:10em;
+    margin:5em;
     /*padding-bottom: 20em;*/
 }
 
@@ -34,8 +60,7 @@ button {
     display: inline-block;
     text-decoration: rgb(73, 90, 105);
     background-color: rgba(61, 68, 60, 0.822);
-    left: 30em;
-    top: 11em;
     margin-right: 2em;
-    width: 8em;
+    width: 10em;
+    height: 2.5em;
 }
