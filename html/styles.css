@@ -1,48 +1,66 @@
-body{
-    background-image: url("../images/baum.png");
-    background-size: 55em;
+body {
+    background-image: url("../images/wald.png");
+    background-size: cover;
+    background-attachment:fixed;
+    background-repeat: no-repeat;
+    font-family: Candara, fantasy;
     opacity: 85;
 }
-
-img{
-    float:right;
-    width: 15em;
-    height: 20em;
-    border: 1em black;
+.navigationBar {
+    list-style-type: none;
+    margin: -0.5em;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgb(96, 84, 94);
 }
 
-.whiteBox
-{
+li {
+    padding-left: 2em ;
+    padding-right: 2em;
+    float: left;
+}
+
+li a {
+    display: block;
+    color: rgb(204, 232, 225);
+    text-align: center;
+    padding: 25px;
+    text-decoration: none;
+}
+li a:hover {
+    background-color: rgb(74, 15, 57);
+}
+
+
+.whiteBox {
     background-color: rgba(245, 245, 245, 0.664);
-    margin: 2em;
-    padding-bottom: 20em;
+    margin:5em;
+    /*padding-bottom: 20em;*/
 }
 
-.margin{
+.margin {
     margin: 2em;
 }
-.centered
-{
+
+.centered {
     text-align: center;
 }
 
-.indexTitle{
-    position: relative;
+.indexTitle {
+
     top: 3em;
     text-align: center;
-    color:rgb(63, 84, 102);
-    font-family:papyrus,fantasy;
+    color: rgb(63, 84, 102);
+    font-family: papyrus, fantasy;
     font-size: 3em;
 }
 
-button{ 
-    position: relative;
-    float: left;
+button {
+
+    display: inline-block;
     text-decoration: rgb(73, 90, 105);
     background-color: rgba(61, 68, 60, 0.822);
-    left: 30em;
-    top: 11em;
-    margin-right:2em;
-    width: 8em;
-   
+    margin-right: 2em;
+    width: 10em;
+    height: 2.5em;
 }
