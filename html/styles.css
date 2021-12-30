@@ -4,6 +4,13 @@ body{
     opacity: 85;
 }
 
+img{
+    float:right;
+    width: 15em;
+    height: 20em;
+    border: 1em black;
+}
+
 .whiteBox
 {
     background-color: rgba(245, 245, 245, 0.664);
