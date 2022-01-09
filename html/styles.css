@@ -6,6 +6,24 @@ body {
     font-family: Candara, fantasy;
     opacity: 85;
 }
+
+.distance{
+   margin-top: 4em;
+}
+
+.steak{
+    clear: left;
+}
+
+img{
+    border: 2px solid black;
+    border-radius: 3em;
+    background-color: rgba(217, 226, 224, 0.342);
+    height: 10em;
+    width: 11em;
+    float: left;
+    margin-right: 3em;
+}
 .navigationBar {
     list-style-type: none;
     margin: -0.5em;
@@ -35,7 +53,7 @@ li a:hover {
 .whiteBox {
     background-color: rgba(245, 245, 245, 0.664);
     margin:5em;
-    /*padding-bottom: 20em;*/
+    padding-bottom: 5em;
 }
 
 .margin {
