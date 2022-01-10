@@ -1,0 +1,46 @@
+name: Deploy GH-Pages
+
+on:
+  push:
+    branches: [ main, master ] 
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    env:
+      REDIRECT_URL: https://wmc-ahif-2021.github.io/VisualNovel/
+      PACKAGE_JSON: https://gist.githubusercontent.com/Luna-Klatzer/1a099c115498fbdf01a6c4a749ceb2d5/raw/4763a8d3a843352ed4b42d83e6ad10ea27a76322/package.json
+      UPDATE_SCRIPT: https://gist.githubusercontent.com/Luna-Klatzer/a6f57a7ad7d79dc0a90115846cc98945/raw/834133b554fa5ef35316614783dea8d1e69a92d6/insert-html-banner.py
+      SCRIPT_FILE_NAME: insert-html-banner.py
+    strategy:
+      matrix:
+        node-version: [16.x]
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Run Setup for "tree"
+        run: sudo apt-get install tree
+      - name: Installs dependencies
+        run: |
+          curl ${{ env.PACKAGE_JSON }} > package.json
+          npm i
+      - name: Download Update Script
+        run: curl ${{ env.UPDATE_SCRIPT }} > ${{ env.SCRIPT_FILE_NAME }}
+      - name: Insert Disclaimer Header
+        run: python insert-html-banner.py
+      - name: Build Files using Parcel
+        run: parcel build src/index.html --public-url ${{ env.REDIRECT_URL }} --dist-dir .
+      - name: Add Local Identification Config
+        run: |
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --global user.name  "github-actions"
+      - name: Commit changes to main
+        run: |
+          git add .
+          git commit -m "Updated parcel build"
+          git push origin +main:gh-pages --force
