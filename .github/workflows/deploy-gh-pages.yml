@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       REDIRECT_URL: https://wmc-ahif-2021.github.io/VisualNovel/
-      PACKAGE_JSON: https://gist.githubusercontent.com/Luna-Klatzer/1a099c115498fbdf01a6c4a749ceb2d5/raw/d4c58fe3e3de74bc0f08683362584854b422ade2/package.json
+      PACKAGE_JSON: https://gist.githubusercontent.com/Luna-Klatzer/1a099c115498fbdf01a6c4a749ceb2d5/raw/4763a8d3a843352ed4b42d83e6ad10ea27a76322/package.json
       UPDATE_SCRIPT: https://gist.githubusercontent.com/Luna-Klatzer/a6f57a7ad7d79dc0a90115846cc98945/raw/834133b554fa5ef35316614783dea8d1e69a92d6/insert-html-banner.py
       SCRIPT_FILE_NAME: insert-html-banner.py
     strategy:
