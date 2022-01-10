@@ -14,13 +14,14 @@ body {
 .steak{
     clear: left;
 }
-
+.centered-menu{
+    text-align: center;
+}
 img{
     border: 2px solid black;
     border-radius: 3em;
     background-color: rgba(217, 226, 224, 0.342);
-    height: 10em;
-    width: 11em;
+    height: 11em;
     float: left;
     margin-right: 3em;
 }
@@ -35,7 +36,8 @@ img{
 li {
     padding-left: 2em ;
     padding-right: 2em;
-    float: left;
+    display: inline-block;
+    text-align: left;
 }
 
 li a {
