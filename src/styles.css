@@ -7,13 +7,13 @@ body {
     opacity: 85;
 }
 
-.distance{
-   margin-top: 4em;
+.questionmark{
+    width: 4em;
+    height: 7em;
+    padding: 2em 1.75em 2em 1.75em;
 }
-
-.steak{
-    margin-top: 2em;
-    clear: left;
+td{
+    padding-top: 2em;
 }
 .centered-menu{
     text-align: center;
@@ -22,6 +22,7 @@ img{
     border: 2px solid black;
     border-radius: 3em;
     background-color: rgba(217, 226, 224, 0.342);
+    width: 7.5em;
     height: 11em;
     float: left;
     margin-right: 3em;
@@ -32,6 +33,7 @@ img{
     padding: 0;
     overflow: hidden;
     background-color: rgb(96, 84, 94);
+    font-size: 17px;
 }
 
 li {
@@ -61,6 +63,7 @@ li a:hover {
 
 .margin {
     margin: 2em;
+    font-size: 17px;
 }
 
 .centered {
@@ -79,9 +82,45 @@ li a:hover {
 button {
 
     display: inline-block;
-    text-decoration: rgb(73, 90, 105);
-    background-color: rgba(61, 68, 60, 0.822);
+    background-color: rgb(64, 77, 90);
+    font-family:Candara,fantasy;
+    color: rgb(216, 227, 238);
     margin-right: 2em;
     width: 10em;
     height: 2.5em;
+    font-size: 17px;
+    border-radius: 6px;
+
 }
+
+button:hover{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+
+/* loadingscreen
+
+.loader{
+    font-family: 'ZCOOL KuaiLe',cursive;
+    font-size: 40px;
+    color: rgb(74, 15, 57);
+}
+
+.loader::after
+{
+   content: '\2026';
+   display: inline-block;
+   overflow: hidden;
+   vertical-align: bottom;
+   animation: dots steps(4,end)2s infinite;
+   width: 0px;
+}
+
+@keyframes dots{
+    to
+    {
+       width: 1em;
+    }
+}*/
+
+
