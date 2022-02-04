@@ -7,23 +7,23 @@ body {
     opacity: 85;
 }
 
-.questionmark{
-    width: 4em;
-    height: 7em;
-    padding: 2em 1.75em 2em 1.75em;
-}
 td{
     padding-top: 2em;
 }
 .centered-menu{
     text-align: center;
 }
-img{
+.map{
+    width: 67em;
+    height: 42em;
+    float:none;
+    margin-right: 3em;
+}
+.ChDescImg{
     border: 2px solid black;
-    border-radius: 3em;
-    background-color: rgba(217, 226, 224, 0.342);
-    width: 7.5em;
-    height: 11em;
+    background-color: rgba(217, 224, 255, 0.342);
+    width: 17em;
+    height: 24em;
     float: left;
     margin-right: 3em;
 }
@@ -54,13 +54,16 @@ li a:hover {
     background-color: rgb(74, 15, 57);
 }
 
-
 .whiteBox {
     background-color: rgba(245, 245, 245, 0.664);
     margin:5em;
     padding-bottom: 0.5em;
 }
-
+h2{
+    text-align:start;
+    font-size: 50px;
+    padding-block-start: 0em;
+}
 .margin {
     margin: 2em;
     font-size: 17px;
@@ -69,34 +72,37 @@ li a:hover {
 .centered {
     text-align: center;
 }
-
 .indexTitle {
 
     top: 3em;
     text-align: center;
     color: rgb(63, 84, 102);
     font-family: papyrus, fantasy;
-    font-size: 3em;
+    font-size: 10em;
 }
-
+.othersTitle {
+    color: rgb(63, 84, 102);
+    font-family: papyrus, fantasy;
+    font-size: 2em;
+}
 button {
-
+    text-align: center;
     display: inline-block;
-    background-color: rgb(64, 77, 90);
+    background-color: rgb(96, 84, 94);
     font-family:Candara,fantasy;
-    color: rgb(216, 227, 238);
-    margin-right: 2em;
-    width: 10em;
-    height: 2.5em;
-    font-size: 17px;
+    color: rgb(210, 245, 237);
+    margin-inline: 1em;
+    width: 9em;
+    height: 3.5em;
+    font-size: 33px;
     border-radius: 6px;
 
 }
 
 button:hover{
+    background-color: rgb(74, 15, 57);
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
-
 
 /* loadingscreen
 
