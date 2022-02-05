@@ -1,25 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <link href="styles.css" rel="stylesheet" type="text/css">
-  <title>Our Visual lNovel</title>
-  <link rel="icon" href="../images/logo.png" type="image/icon type">
+    <meta charset="UTF-8">
+    <link href="styles.css" rel="stylesheet" type="text/css">
+    <title>Our Visual Novel</title>
+    <link rel="icon" href="../images/logo.png" type="image/icon type">
 </head>
-<body >
-<div class="centered">
-  <div class="whiteBox">
-    <article class="margin">
-      <br>
-      <h1 class="indexTitle">Visual Novel</h1>
-          <p>
-            <button onclick="window.location.href='https://wmc-ahif-2021.github.io/VisualNovel/src/story-description';">Story</button>
-            <button onclick="window.location.href='https://wmc-ahif-2021.github.io/VisualNovel/src/character-description.html';">Characters</button>
-            <button onclick="window.location.href='https://wmc-ahif-2021.github.io/VisualNovel/src/VisualNovel-history.html';">History</button>
-          </p>
-      <br>
-    </article>
-  </div>
-</div>
+
+<body>
+    <div id="loadingscreen">
+        <div class="loader">Loading</div>
+    </div>
+    <div id="main-content" class="centered">
+        <div class="whiteBox">
+            <article class="margin">
+                <br>
+                <h1 class="indexTitle">Visual Novel</h1>
+                <p>
+                    <button onclick="window.location.href='https://wmc-ahif-2021.github.io/VisualNovel/src/story-description';">Story</button>
+                    <button onclick="window.location.href='https://wmc-ahif-2021.github.io/VisualNovel/src/character-description.html';">Characters</button>
+                    <button onclick="window.location.href='https://wmc-ahif-2021.github.io/VisualNovel/src/VisualNovel-history.html';">History</button>
+                </p>
+                <br>
+            </article>
+        </div>
+    </div>
+    <script src="./js/loadingscreen.ts"></script>
 </body>
+
 </html>

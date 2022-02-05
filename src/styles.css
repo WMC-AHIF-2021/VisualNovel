@@ -1,24 +1,27 @@
 body {
     background-image: url("../images/wald.png");
     background-size: cover;
-    background-attachment:fixed;
+    background-attachment: fixed;
     background-repeat: no-repeat;
     font-family: Candara, fantasy;
     opacity: 85;
 }
 
-.questionmark{
+.questionmark {
     width: 4em;
     height: 7em;
     padding: 2em 1.75em 2em 1.75em;
 }
-td{
+
+td {
     padding-top: 2em;
 }
-.centered-menu{
+
+.centered-menu {
     text-align: center;
 }
-img{
+
+img {
     border: 2px solid black;
     border-radius: 3em;
     background-color: rgba(217, 226, 224, 0.342);
@@ -27,6 +30,7 @@ img{
     float: left;
     margin-right: 3em;
 }
+
 .navigationBar {
     list-style-type: none;
     margin: -0.5em;
@@ -37,7 +41,7 @@ img{
 }
 
 li {
-    padding-left: 2em ;
+    padding-left: 2em;
     padding-right: 2em;
     display: inline-block;
     text-align: left;
@@ -50,14 +54,14 @@ li a {
     padding: 25px;
     text-decoration: none;
 }
+
 li a:hover {
     background-color: rgb(74, 15, 57);
 }
 
-
 .whiteBox {
     background-color: rgba(245, 245, 245, 0.664);
-    margin:5em;
+    margin: 5em;
     padding-bottom: 0.5em;
 }
 
@@ -71,7 +75,6 @@ li a:hover {
 }
 
 .indexTitle {
-
     top: 3em;
     text-align: center;
     color: rgb(63, 84, 102);
@@ -80,47 +83,45 @@ li a:hover {
 }
 
 button {
-
     display: inline-block;
     background-color: rgb(64, 77, 90);
-    font-family:Candara,fantasy;
+    font-family: Candara, fantasy;
     color: rgb(216, 227, 238);
     margin-right: 2em;
     width: 10em;
     height: 2.5em;
     font-size: 17px;
     border-radius: 6px;
-
 }
 
-button:hover{
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+button:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+#loadingscreen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 95vh;
+}
 
-/* loadingscreen
-
-.loader{
-    font-family: 'ZCOOL KuaiLe',cursive;
+.loader {
+    font-family: 'ZCOOL KuaiLe', cursive;
     font-size: 40px;
-    color: rgb(74, 15, 57);
+    color: white;
 }
 
-.loader::after
-{
-   content: '\2026';
-   display: inline-block;
-   overflow: hidden;
-   vertical-align: bottom;
-   animation: dots steps(4,end)2s infinite;
-   width: 0px;
+.loader::after {
+    content: '\2026';
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: bottom;
+    animation: dots steps(4, end)2s infinite;
+    width: 0px;
 }
 
-@keyframes dots{
-    to
-    {
-       width: 1em;
+@keyframes dots {
+    to {
+        width: 1em;
     }
-}*/
-
-
+}
