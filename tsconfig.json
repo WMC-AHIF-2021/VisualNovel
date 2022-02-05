@@ -1,11 +1,13 @@
 {
-    "$schema": "http://json.schemastore.org/tsconfig",
     "compilerOptions": {
-      "removeComments": true,
-      "outDir": "dist",
-      "rootDir": "src",
-      "baseUrl": "."
+        "target": "es6",
+        "sourceMap": true,
+        "outDir": "build"
     },
-    "include": ["src"],
-    "exclude": ["node_modules", ".parcel-cache", "dist"]
-  }
+    "exclude": [
+        "node_modules"
+    ],
+    "include": [
+        "src/scripts/**/*"
+    ]
+}
