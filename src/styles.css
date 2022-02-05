@@ -20,6 +20,7 @@ td {
     height: 42em;
     float: none;
     margin-right: 3em;
+    max-width: calc(100% - 2rem);
 }
 
 .ChDescImg {
