@@ -104,6 +104,7 @@ button {
     font-family: Candara, fantasy;
     color: rgb(210, 245, 237);
     margin-inline: 1em;
+    margin-bottom: 2em;
     width: 9em;
     height: 3.5em;
     font-size: 33px;
