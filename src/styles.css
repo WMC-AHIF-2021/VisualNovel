@@ -7,6 +7,12 @@ body {
     opacity: 85;
 }
 
+.usPics{
+    width: 17em;
+    height: 17em;
+    float:left;
+}
+
 td {
     padding-top: 2em;
 }
