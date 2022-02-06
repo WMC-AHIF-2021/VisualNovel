@@ -11,7 +11,7 @@ setDisplay(
 );
 
 document.addEventListener('DOMContentLoaded' , () =>
-wait(1500).then(() => {
+wait(1000).then(() => {
     setDisplay(
         document.getElementById('main-content'), 'block'
     );
