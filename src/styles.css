@@ -67,8 +67,10 @@ li a:hover {
 }
 
 h2 {
+    color: rgb(63, 84, 102);
     text-align: start;
-    font-size: 50px;
+    font-size: 2em;
+    font-family: papyrus, fantasy;
     padding-block-start: 0em;
 }
 
@@ -92,7 +94,7 @@ h2 {
 .othersTitle {
     color: rgb(63, 84, 102);
     font-family: papyrus, fantasy;
-    font-size: 2em;
+    font-size: 4em;
 }
 
 button {
