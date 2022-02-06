@@ -15,6 +15,23 @@ td {
     text-align: center;
 }
 
+.map {
+    width: 67em;
+    height: 42em;
+    float: none;
+    margin-right: 3em;
+    max-width: calc(100% - 2rem);
+}
+
+.ChDescImg {
+    border: 2px solid black;
+    background-color: rgba(217, 224, 255, 0.342);
+    width: 17em;
+    height: 24em;
+    float: left;
+    margin-right: 3em;
+}
+
 .navigationBar {
     list-style-type: none;
     margin: -0.5em;
@@ -51,7 +68,7 @@ li a:hover {
 
 h2 {
     text-align: start;
-    font-size: 2em;
+    font-size: 50px;
     padding-block-start: 0em;
 }
 
@@ -64,11 +81,18 @@ h2 {
     text-align: center;
 }
 
-.othersTitle {
-    font-weight: bold;
-    color: rgb(34, 62, 101);
+.indexTitle {
+    top: 3em;
+    text-align: center;
+    color: rgb(63, 84, 102);
     font-family: papyrus, fantasy;
-    font-size: 4em;
+    font-size: 10em;
+}
+
+.othersTitle {
+    color: rgb(63, 84, 102);
+    font-family: papyrus, fantasy;
+    font-size: 2em;
 }
 
 button {
