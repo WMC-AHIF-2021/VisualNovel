@@ -6,7 +6,12 @@ body {
     font-family: Candara, fantasy;
     opacity: 85;
 }
-
+p{
+    font-size: 1.3em;
+}
+h3{
+    font-size: 1.5em;
+}
 .usPics{
     width: 17em;
     height: 17em;
