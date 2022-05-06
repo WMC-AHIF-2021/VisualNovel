@@ -157,35 +157,91 @@ button:hover {
 
 .Start {
     height: 30em;
-    display: inline-block;
-    margin: 3em 5% 0 13em;
+   margin-top: 3em;
+
 }
 
 #StartingBtn{
+
+    alignment: center;
     position: absolute;
-    margin:  7em 0 0 37%;;
+    margin:  1em 0 0 0;
 }
 
-#EnterButton
+#EnterButton,.genderbtn
 {
+    alignment: center;
     display: inline-block;
     position: absolute;
-    margin: 12em 0 0 15em;
+    margin: 12em 0 0 0;
     height: 2.5em;
     width: 8em;
 }
 
-#MCsName{
-    position: absolute;
-    margin: 25em 0 0 41em;
+.genderbtn
+{
+    display: none;
+    height: 2em;
+}
+
+#fembtn{
+    margin-top: 2em;
+}
+#malebtn{
+    margin-top: 7em;
 }
 
 
 
-#EnterText{
-    display: none;
+
+#MCsName{
+    alignment: center;
+    position: absolute;
+    margin: 15em 0 0 0;
+    height: 2em;
+    width: 17em;
+}
+
+
+
+#EnterText,#gendertext {
+    alignment: center;
     position: absolute;
     color: rgb(210, 245, 237);
-    margin: 8em 0 0 21.5em;
+    margin: -5em 0 0 0;
 }
+
+.container-md{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+
+#textbox{
+    display: none;
+    background: #000;
+    color: #fff;
+    height: 9em;
+    opacity: 50%;
+    position: absolute;
+    width: 50em;
+    margin-top: 22em;
+}
+
+#SpeakingPerson{
+    display: none;
+    background: #000;
+    color: #fff;
+    opacity: 50%;
+    position: absolute;
+    margin-top: 11em;
+    width: 10em;
+    text-align: center;
+    border: 1px solid whitesmoke;
+}
+
+
+
+
 
