@@ -1,26 +1,27 @@
 Scene: Bedroom
-hm..I slowly awoke from my sleep. I was still a little tired, but I had the feeling as if something was off.
+I slowly awoke from my sleep. I was still a little tired, but I had a feeling that something was off.
 Looking at my surroundings I realized that I wasn't in my bedroom, but rather in an odd-looking one. The room was more or less
-empty, the only furniture being the bed i woke up in and a shelve beside the window. There is dust and spiderwebs everywhere and the
-walls are dirty. A part of me thought that I was just imagining things, but after a while of getting fully awake I
-started to become a bit worried. Is nobody here? I suddenly heard a strange noise coming from downstairs.
+empty, the only furniture being the bed i woke up in and a shelve beside the window. It is dusty, and spiderwebs are everywhere. The
+walls are dirty. A part of me thought I was just imagining things, but after a bit i was fully awake and I
+started to become even more worried. Is nobody here? I suddenly heard a strange noise coming from downstairs.
+
 Scene: Kitchen
-I rushed down the stairs to find myself in an kitchen-like area.Thats when i noticed something crawling on top of one of
-the counters. How did i get here over night and why is there a weird round monster with wings? There is an old frypan on
-one of the counters. I could try to attack it, or is it better to try and communicate with it?
+I rushed down the stairs to find myself in a kitchen-like area. I kept wondering: "How did I get here over night?", but thats when I noticed something
+crawling on top of one of the counters. It's a round creature with wings and large teeth at the bottom of its face. There is an old frypan on
+one of the counters. I could attack it, but maybe I should try to communicate with it?
 A: Attack it / B: Try to communicate
-B: I tried to get closer to it, when it suddenly launched at me and bit my right arm "arghhhh".I panicked. Why is this happening?
-Seconds later someone else rushed into the house and knocked the creature out.
+B: I tried to get closer to it when it suddenly launched at me and bit my right arm. "AAAAAHH", I screamed. I panicked. Why is this happening to me?
+Seconds later someone else ran into the house and knocked the creature out.
 ???(Vita)
 "Are you okay? I heard screaming."
 MC
 "The thing bit me. Do you have anything to stop the bleeding?"
 He reached into his bag and took out some bandeges.
 ???
-"Here have these"
+"Here, have these."
 MC
 I took the bandages and wrapped them arround my right arm.
-"Thank you for saving me. Do you perhaps know where we are and where i can find other people?"
+"Thank you for saving me. Do you perhaps know where we are and where I can find other people?"
 ???(Vita)
 "Oh, did you get lost? Well i don't know the name of this place, but if you are searching for the village it should be somewhere in the west.
 How did you even end up in a place like this?"
@@ -36,6 +37,7 @@ there, just waiting to attack me.
 "hmm..its good for start to get somewhere safe and get the bite treated, so i will gladly accept your offer. I really can't thank you enough"
 ???
 "its no problem, you' are welcome. Come on let's get going"
+
 Scene: Landschaft
 MC
 While walking out of the house with vita i noticed that there where more destroyed buildings. How did I end up in a
@@ -43,7 +45,7 @@ place like this? Did i hurt my head or someone kidnapped me and brought me here?
 ???(Vita)
 "Come to think of it..we havent exchanged names yet, have we? The name's Vita, what about you? Or do you also not remember your name?"
 MC
-"My name..what was my name again?Oh!Now I remember its {name}!By the way, how long are we going to be walking?Also can you maybe tell me
+"My name..what was my name again? Oh! Now I remember. It's {name}!By the way, how long are we going to be walking? Also, can you maybe tell me
 a bit about this world?"
 Vita
 "Sure i can do that. You should know, that there are monster, like that thing from before, humans and half-monsters in this world.
