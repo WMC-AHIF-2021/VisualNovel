@@ -222,11 +222,12 @@ button:hover {
     display: none;
     background: #000;
     color: #fff;
-    height: 9em;
     opacity: 50%;
     position: absolute;
     width: 50em;
-    margin-top: 22em;
+    height: 7.5em;
+    margin-top: 23em;
+    padding: 0.5em 0.5em 0.5em 0.5em;
 }
 
 #SpeakingPerson{
@@ -235,7 +236,7 @@ button:hover {
     color: #fff;
     opacity: 50%;
     position: absolute;
-    margin-top: 11em;
+    margin-top: 12em;
     width: 10em;
     text-align: center;
     border: 1px solid whitesmoke;
