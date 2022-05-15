@@ -104,5 +104,15 @@
     "posttest": "npm run lint & npm run prettier",
     "dev": "parcel src/index.html --open",
     "json-server": "cd server & npx json-server -- db.json"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "targets": {
+    "default": {
+      "engines": {
+        "browsers": ">= 50%"
+      }
+    }
   }
 }
