@@ -1,0 +1,27 @@
+
+{
+  "scenes": [
+    {
+        "id": 0,
+        "background": "./../images/backgrounds/SpawnPoint.png",
+        "CharacterLeft": "none",
+        "CharacterRight": "none",
+        "speakingPerson": ["Mc"],
+        "text" : "I slowly awoke from my sleep. I was still a little tired, but I had a feeling that something was off.Looking at my surroundings I realized that I wasn't in my bedroom, but rather in an odd-looking one.; The room was more or less empty, the only furniture being the bed i woke up in and a shelve beside the window. It is dusty, and spiderwebs are everywhere. The walls are dirty. A part of me thought I was just imagining things, but after a bit i was fully awake and I\nstarted to become even more worried.; Is nobody here? I suddenly heard a strange noise coming from downstairs.",
+        "next1" : 1,
+        "next2" : -1,
+        "done" : false
+    },
+    {
+      "id": 1,
+      "background": "./../images/backgrounds/kitchen.png",
+      "CharacterLeft": "none",
+      "CharacterRight": "none",
+      "speakingPerson": ["Mc"],
+      "text" : "I rushed down the stairs to find myself in a kitchen-like area. I kept wondering: \"How did I get here over night?\", but that's when I noticed something crawling on top of one of the counters.; It's a round creature with wings and large teeth at the bottom of its face. There is an old frypan on one of the counters.; I could attack it, but maybe I should try to communicate with it?",
+      "next1" : 2,
+      "next2" : 3,
+      "done": false
+    }
+  ]
+}

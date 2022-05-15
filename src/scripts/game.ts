@@ -1,41 +1,72 @@
-import { readFileSync } from 'fs';
+import {HttpClient, Scene} from "./server-client";
 
-export class Scene{
-    background: string;
-    text: string;
-    CharacterRight: string;
-    Character2Left: string;
-    McName : string;
-    McGender : string;
-    next: Scene;
+let curScene: SceneManager;
+let McName;
+let McGender;
+const MAXSCENES = 2;
 
-    constructor(name:string,gender:string) {
-        this.background = '../../images/background/SpawnPoint.png';
-        this.CharacterRight = 'none';
-        this.Character2Left = 'none';
-        this.text =  "I slowly awoke from my sleep. I was still a little tired, but I had the feeling as if something was off.\n" +
-            "Looking at my surroundings I realized that I wasn't in my Room, but in a rather weird one. The room was more or less\n" +
-            "empty, the only furniture was the bed and a shelf beside the window. There is dust and spiderwebs everywhere and the\n" +
-            "walls are dirty. A part of me thought that I was just imagining things, but after a while of getting fully awake I\n" +
-            "started to become a bit worried. Is there nobody here? Suddenly I heard a strange noise coming from downstairs";
-        this.McName = name;
-        this.McGender = gender;
+
+class SceneManager {
+    private readonly client: HttpClient;
+    public headScene: Scene;
+
+    constructor() {
+        this.client = new HttpClient();
+
     }
 
-    public BuildScene() {
-        document.getElementById('SpeakingPerson').innerText = this.McName;
-        document.getElementById('textbox').innerText = this.text;
+    public async readScene(): Promise<void> {
+        if (this.headScene == null) {
+            this.headScene = await this.client.getScene(0);
+        } else {
+            if (this.headScene.next1 >= MAXSCENES) {
+                // Remove all event listeners by deleting this item and replacing it
+               /* const oldElement = document.getElementById('Start');
+                const newElement = oldElement.cloneNode(true);
+                oldElement.parentNode.replaceChild(newElement, oldElement);
+                //TODO: Redirect to other page ig*/
+            } else {
+                this.headScene = await this.client.getScene(this.headScene.next1);
+            }
+
+        }
+    }
+
+    public HandleTextBox() {
+        document.getElementById('SpeakingPerson').innerText = McName;
+
+        const splitText = this.headScene.text.split(';');
+        document.getElementById('textbox').innerText = splitText[0];
+        let i = 1;
+        document.getElementById('Start').addEventListener('click', () => {
+            if(i < splitText.length)
+            {
+                document.getElementById('textbox').innerText = splitText[i];
+                i++;
+            }
+            else{
+                this.headScene.done = true;
+            }
+
+        });
+
+
     }
 
 
     ChangeScene() {
         const imageUrl = new URL(
-            '../../images/backgrounds/kitchen.png',
+            this.headScene.background,
             // @ts-ignore
             import.meta.url
         );
         (document.getElementById('Start') as HTMLImageElement).src = imageUrl.href;
+        console.log(imageUrl.href);
+        console.log(this.headScene.background);
+        this.HandleTextBox();
     }
+
+
 }
 
 
@@ -47,8 +78,6 @@ function HideGenderElements() {
     document.getElementById('textbox').style.display = 'inline-block';
     document.getElementById('SpeakingPerson').style.display = 'inline-block';
 }
-
-
 
 
 function ManageName() {
@@ -68,66 +97,65 @@ function ManageName() {
 
 
 }
+
 /*An und Ausschalten der Sichtbarkeit
   je nach dem welchen genderButton man auswählt, wird dem gender dieses Zugeschrieben
  */
-function ManageGender(): string {
+function ManageGender() {
     document.getElementById('gendertext').style.display = 'inline-block';
     document.getElementById('fembtn').style.display = 'inline-block';
     document.getElementById('malebtn').style.display = 'inline-block';
     document.getElementById('divbtn').style.display = 'inline-block';
-    let gender = '';
     document.getElementById('fembtn').addEventListener('click', () => {
-        gender = 'female'
+        McGender = 'female'
         HideGenderElements(); // stellt Sichtbarkeit aus
     })
     document.getElementById('malebtn').addEventListener('click', () => {
-        gender = 'male'
+        McGender = 'male'
         HideGenderElements();
     })
     document.getElementById('divbtn').addEventListener('click', () => {
-        gender = 'divers';
+        McGender = 'divers';
         HideGenderElements();
 
     })
-    return gender;
 }
 
-let currentScene : Scene = null;
 
-function init() {
+async function init() {
 
     ManageName();
-    let Mcname;
-    let McGender;
-    document.getElementById('EnterButton').addEventListener('click', () => {
+    document.getElementById('EnterButton').addEventListener('click', async () => {
         const name = <HTMLInputElement>document.getElementById('MCsName');
-        Mcname = name.value;
+        McName = name.value;
         document.getElementById('EnterButton').style.display = 'none';
         document.getElementById('MCsName').style.display = 'none';
         document.getElementById('EnterText').style.display = 'none';
+        ManageGender();
 
-        McGender = ManageGender();
-        currentScene = new Scene(Mcname,McGender);
+        curScene = new SceneManager();
+        await curScene.readScene();
+        await curScene.ChangeScene();
+        document.getElementById('Start').addEventListener("click", async () => {
+            if(curScene.headScene.done == true)
+            {
+                await curScene.readScene();
+                await curScene.ChangeScene();
+            }
 
-        currentScene.BuildScene();
-        const playground = document.getElementById('Start');
-        playground.addEventListener('click',() =>{
-            currentScene.ChangeScene();
-            //Todo: next block of text.If no text, then next Scene
-        })
+
+        });
 
 
-    })
-
+    });
 
 
 }
 
-document.addEventListener('DOMContentLoaded', (event) => {
-    init();
+document.addEventListener('DOMContentLoaded', async (event) => {
+    await init();
 });
 
-function SetDisplay (element: HTMLElement, display: string):void {
+function SetDisplay(element: HTMLElement, display: string): void {
     element.style.display = display;
 }

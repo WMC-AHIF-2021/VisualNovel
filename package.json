@@ -72,6 +72,8 @@
     "@parcel/workers": "2.2.1",
     "parcel": "2.2.1",
     "@parcel/resolver-glob": "^2.5.0",
+    "@types/jquery": "^3.5.14",
+    "jquery" : "^3.6.0",
     "@types/mocha": "^9.0.0",
     "@types/node": "^16.10.2",
     "@typescript-eslint/eslint-plugin": "^4.32.0",
@@ -90,7 +92,7 @@
   },
   "scripts": {
     "prebuild": "npm run tslint",
-    "build": "parcel build src/index.html",
+    "build": "parcel build src/index.html --public-url ./",
     "gh-pages-build": "parcel build src/index.html --public-url  https://wmc-ahif-2021.github.io/VisualNovel/ --dist-dir .",
     "watch": "parcel watch src/index.html",
     "start": "npm run build && npm run dev",
@@ -100,6 +102,7 @@
     "tslint": "eslint src/scripts/**/*.ts",
     "tslint:fix": "npm run lint -- --fix",
     "posttest": "npm run lint & npm run prettier",
-    "dev": "parcel src/index.html --open"
+    "dev": "parcel src/index.html --open",
+    "json-server": "cd server & npx json-server -- db.json"
   }
 }
