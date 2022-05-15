@@ -26,7 +26,7 @@ jobs:
           cache: 'npm'
       - name: Installs dependencies
         run: |
-          npm install
+          npm ci
       - name: Download Update Script
         run: curl ${{ env.UPDATE_SCRIPT }} > ${{ env.SCRIPT_FILE_NAME }}
       - name: Insert Disclaimer Header
