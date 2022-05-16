@@ -94,8 +94,8 @@
   },
   "scripts": {
     "prebuild": "npm run tslint",
-    "build": "parcel build src/index.html --public-url ./",
-    "gh-pages-build": "parcel build src/index.html --public-url  https://wmc-ahif-2021.github.io/VisualNovel/ --dist-dir .",
+    "build": "parcel build src/index.html --public-url ./ --no-content-hash --no-optimize --no-scope-hoist",
+    "gh-pages-build": "parcel build src/index.html --public-url  https://wmc-ahif-2021.github.io/VisualNovel/ --dist-dir . --no-content-hash --no-optimize --no-scope-hoist",
     "watch": "parcel watch src/index.html",
     "start": "npm run build && npm run dev",
     "lint": "npm run tslint && npm run prettier",
