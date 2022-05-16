@@ -9,7 +9,6 @@ jobs:
 
     runs-on: ubuntu-latest
     env:
-      REDIRECT_URL: https://wmc-ahif-2021.github.io/VisualNovel/
       UPDATE_SCRIPT: https://gist.githubusercontent.com/Luna-Klatzer/a6f57a7ad7d79dc0a90115846cc98945/raw/756317baa73c904e3c2afef8cd10f3509dfc8dea/insert-html-banner.py
       SCRIPT_FILE_NAME: insert-html-banner.py
     strategy:
@@ -32,7 +31,7 @@ jobs:
       - name: Insert Disclaimer Header
         run: python insert-html-banner.py
       - name: Build Files using Parcel
-        run: parcel build src/index.html --public-url ${{ env.REDIRECT_URL }} --dist-dir .
+        run: npm run gh-pages-build
       - name: Add Local Identification Config
         run: |
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
