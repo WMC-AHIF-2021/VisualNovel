@@ -1,34 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <link href="styles.css" rel="stylesheet" type="text/css">
+  <head>
+    <meta charset="UTF-8" />
+    <link href="styles.css" rel="stylesheet" type="text/css" />
     <title>Our Visual Novel</title>
-    <link rel="icon" href="../images/additional/logo.png" type="image/icon type">
-</head>
+    <link
+      rel="icon"
+      href="../images/additional/logo.png"
+      type="image/icon type"
+    />
+  </head>
 
-<body>
+  <body>
     <div id="loadingscreen">
-        <div class="loader">Loading</div>
+      <div class="loader">Loading</div>
     </div>
     <div id="main-content" class="centered">
-        <div class="whiteBox">
-            <article class="margin">
-                <br>
-                <h1 class="indexTitle">Visual Novel</h1>
-                <p>
-                    <a href="./story-description.html"><button>Story</button></a>
-                    <a href="./character-description.html"><button>Characters</button></a>
-                    <a href="./VisualNovel-history.html"><button>History</button></a>
-                    <a href="./game.html"><button>Game</button></a>
-                    <a href="./aboutUs.html"><button>About us</button></a>
-                </p>
-                <br>
-            </article>
-        </div>
+      <div class="whiteBox">
+        <article class="margin">
+          <br />
+          <h1 class="indexTitle">Visual Novel</h1>
+          <p>
+            <a href="./story-description.html"><button>Story</button></a>
+            <a href="./character-description.html"
+              ><button>Characters</button></a
+            >
+            <a href="./VisualNovel-history.html"><button>History</button></a>
+            <a href="./game.html"><button>Game</button></a>
+            <a href="./aboutUs.html"><button>About us</button></a>
+          </p>
+          <br />
+        </article>
+      </div>
     </div>
-    <script type="module" src="scripts/loadingscreen.ts"></script>
-</body>
-
+    <script type="module">
+      import * as loadingScreen from "./scripts/loadingscreen";
+    </script>
+  </body>
 </html>
