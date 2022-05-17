@@ -1,5 +1,10 @@
 import { HttpClient, Scene } from "./server-client";
 
+// @ts-ignore
+import images from "./../../images/backgrounds/*";
+// @ts-ignore
+import charImages from "./../../images/Characters/*";
+
 let curScene: SceneManager;
 let McName;
 let McGender;
@@ -46,14 +51,8 @@ class SceneManager {
   }
 
   ChangeScene() {
-    const imageUrl = new URL(
-      this.headScene.background,
-      // @ts-ignore
-      import.meta.url
-    );
-    (document.getElementById("Start") as HTMLImageElement).src = imageUrl.href;
-    console.log(imageUrl.href);
-    console.log(this.headScene.background);
+    const start = <HTMLImageElement>document.getElementById("Start");
+    start.src = images[this.headScene.background];
     this.HandleTextBox();
   }
 }

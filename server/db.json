@@ -3,7 +3,7 @@
   "scenes": [
     {
         "id": 0,
-        "background": "./../images/backgrounds/SpawnPoint.png",
+        "background": "SpawnPoint.png",
         "CharacterLeft": "none",
         "CharacterRight": "none",
         "speakingPerson": ["Mc"],
@@ -14,7 +14,7 @@
     },
     {
       "id": 1,
-      "background": "./../images/backgrounds/kitchen.png",
+      "background": "kitchen.png",
       "CharacterLeft": "none",
       "CharacterRight": "none",
       "speakingPerson": ["Mc"],
