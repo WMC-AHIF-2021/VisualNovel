@@ -234,3 +234,24 @@ button:hover {
   text-align: center;
   border: 1px solid whitesmoke;
 }
+
+#opt1{
+  position: absolute;
+  margin: 12em 10em 0 0;
+  height: 2.5em;
+  z-index: 3;
+}
+
+#opt2{
+  position: absolute;
+  margin: 12em 0 0 10em;
+  height: 2.5em;
+  z-index: 3;
+}
+
+#charLeft{
+  display: inline-block;
+  width: 20em;
+  margin: 4em 0 0 15em;
+  position: absolute;
+}
