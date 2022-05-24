@@ -1,9 +1,9 @@
-.VNPictures{
-    margin-left: 2em;
-    margin-top: 2em;
-    margin-bottom: 2em;
-    width: 25em;
-    height: 20em;
-    float: none;
-    max-width: calc(100% - 15rem);
+.VNPictures {
+  margin-left: 2em;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  width: 25em;
+  height: 20em;
+  float: none;
+  max-width: calc(100% - 15rem);
 }

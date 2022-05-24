@@ -1,0 +1,10 @@
+{
+  "plugins": [
+    {
+      "name": "preset-default",
+      "params": {
+        "overrides": {}
+      }
+    }
+  ]
+}

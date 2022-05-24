@@ -2,41 +2,36 @@ name: Deploy GH-Pages
 
 on:
   push:
-    branches: [ main, master ] 
+    branches: [ main, master ]
 
 jobs:
   build:
 
     runs-on: ubuntu-latest
     env:
-      REDIRECT_URL: https://wmc-ahif-2021.github.io/VisualNovel/
-      PACKAGE_JSON: https://gist.githubusercontent.com/Luna-Klatzer/1a099c115498fbdf01a6c4a749ceb2d5/raw/e18ebecb7b409c72c6a1a5d7b7b89f24acbb9c0d/package.json
-      PACKAGE_LOCK_JSON: https://gist.githubusercontent.com/Luna-Klatzer/c5d109f6f9f3e5002546cc1f758f1ee3/raw/da3906e529d03ada979b74eecf037442640501da/package-lock.json
-      UPDATE_SCRIPT: https://gist.githubusercontent.com/Luna-Klatzer/a6f57a7ad7d79dc0a90115846cc98945/raw/834133b554fa5ef35316614783dea8d1e69a92d6/insert-html-banner.py
+      UPDATE_SCRIPT: https://gist.githubusercontent.com/Luna-Klatzer/a6f57a7ad7d79dc0a90115846cc98945/raw/756317baa73c904e3c2afef8cd10f3509dfc8dea/insert-html-banner.py
       SCRIPT_FILE_NAME: insert-html-banner.py
     strategy:
       matrix:
         node-version: [16.x]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
       - uses: actions/checkout@v2
-      - name: Use Node.scripts ${{ matrix.node-version }}
+      - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
-      - name: Run Setup for "tree"
-        run: sudo apt-get install tree
+          cache: 'npm'
       - name: Installs dependencies
         run: |
-          curl ${{ env.PACKAGE_JSON }} > package.json
-          curl ${{ env.PACKAGE_LOCK_JSON }} > package-lock.json
           npm ci
       - name: Download Update Script
         run: curl ${{ env.UPDATE_SCRIPT }} > ${{ env.SCRIPT_FILE_NAME }}
       - name: Insert Disclaimer Header
         run: python insert-html-banner.py
       - name: Build Files using Parcel
-        run: parcel build src/index.html --public-url ${{ env.REDIRECT_URL }} --dist-dir .
+        run: npm run gh-pages-build
       - name: Add Local Identification Config
         run: |
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"

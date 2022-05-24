@@ -1,248 +1,257 @@
-body{
-    background-image: url("../images/backgrounds/wald.png");
-    background-size: cover;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    font-family: Candara, fantasy;
-    opacity: 85;
+body {
+  background-image: url("../images/backgrounds/wald2_5.png");
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  font-family: Candara, fantasy;
+  opacity: 85;
 }
-p{
-    font-size: 1.5em;
+p {
+  font-size: 1.5em;
 }
-h3{
-    font-size: 1.5em;
+h3 {
+  font-size: 1.5em;
 }
-.usPics{
-    width: 17em;
-    height: 17em;
-    float:left;
+.usPics {
+  width: 17em;
+  height: 17em;
+  float: left;
 }
 
 td {
-    padding-top: 2em;
+  padding-top: 2em;
 }
 
 .centered-menu {
-    text-align: center;
+  text-align: center;
 }
 
 .map {
-    width: 67em;
-    height: 42em;
-    float: none;
-    margin-right: 3em;
-    max-width: calc(100% - 2rem);
+  width: 67em;
+  height: 42em;
+  float: none;
+  margin-right: 3em;
+  max-width: calc(100% - 2rem);
 }
 
 .ChDescImg {
-    border: 2px solid black;
-    background-color: rgba(217, 224, 255, 0.342);
-    width: 17em;
-    height: 24em;
-    float: left;
-    margin-right: 3em;
+  border: 2px solid black;
+  background-color: rgba(217, 224, 255, 0.342);
+  width: 17em;
+  height: 24em;
+  float: left;
+  margin-right: 3em;
 }
 
 .navigationBar {
-    list-style-type: none;
-    margin: -0.5em;
-    padding: 0;
-    overflow: hidden;
-    background-color: rgb(96, 84, 94);
-    font-size: 17px;
+  list-style-type: none;
+  margin: -0.5em;
+  padding: 0;
+  overflow: hidden;
+  background-color: rgb(96, 84, 94);
+  font-size: 17px;
 }
 
 li {
-    padding-left: 2em;
-    padding-right: 2em;
-    display: inline-block;
-    text-align: left;
+  padding-left: 2em;
+  padding-right: 2em;
+  display: inline-block;
+  text-align: left;
 }
 
 li a {
-    display: block;
-    color: rgb(204, 232, 225);
-    text-align: center;
-    padding: 25px;
-    text-decoration: none;
+  display: block;
+  color: rgb(204, 232, 225);
+  text-align: center;
+  padding: 25px;
+  text-decoration: none;
 }
 
 li a:hover {
-    background-color: rgb(74, 15, 57);
+  background-color: rgb(74, 15, 57);
 }
 
 .whiteBox {
-    background-color: rgba(245, 245, 245, 0.664);
-    margin: 5em;
-    padding-bottom: 0.5em;
+  background-color: rgba(245, 245, 245, 0.664);
+  margin: 5em;
+  padding-bottom: 0.5em;
 }
 
 h2 {
-    color: rgb(63, 84, 102);
-    text-align: start;
-    font-size: 2em;
-    font-family: papyrus, fantasy;
-    padding-block-start: 0em;
+  color: rgb(63, 84, 102);
+  text-align: start;
+  font-size: 2em;
+  font-family: papyrus, fantasy;
+  padding-block-start: 0em;
 }
 
 .margin {
-    margin: 2em;
-    font-size: 17px;
+  margin: 2em;
+  font-size: 17px;
 }
 
 .centered {
-    text-align: center;
+  text-align: center;
 }
 
 .indexTitle {
-    top: 3em;
-    text-align: center;
-    color: rgb(63, 84, 102);
-    font-family: papyrus, fantasy;
-    font-size: 10em;
+  top: 3em;
+  text-align: center;
+  color: rgb(63, 84, 102);
+  font-family: papyrus, fantasy;
+  font-size: 10em;
 }
 
 .othersTitle {
-    color: rgb(63, 84, 102);
-    font-family: papyrus, fantasy;
-    font-size: 4em;
+  color: rgb(63, 84, 102);
+  font-family: papyrus, fantasy;
+  font-size: 4em;
 }
 
 button {
-    text-align: center;
-    display: inline-block;
-    background-color: rgb(96, 84, 94);
-    font-family: Candara, fantasy;
-    color: rgb(210, 245, 237);
-    margin-inline: 1em;
-    margin-bottom: 2em;
-    width: 9em;
-    height: 3.5em;
-    font-size: 33px;
-    border-radius: 6px;
+  text-align: center;
+  display: inline-block;
+  background-color: rgb(96, 84, 94);
+  font-family: Candara, fantasy;
+  color: rgb(210, 245, 237);
+  margin-inline: 1em;
+  margin-bottom: 2em;
+  width: 9em;
+  height: 3.5em;
+  font-size: 33px;
+  border-radius: 6px;
 }
 
 button:hover {
-    background-color: rgb(74, 15, 57);
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-color: rgb(74, 15, 57);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 #loadingscreen {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 95vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 95vh;
 }
 
 .loader {
-    font-family: 'ZCOOL KuaiLe', cursive;
-    font-size: 40px;
-    color: white;
+  font-family: "ZCOOL KuaiLe", cursive;
+  font-size: 40px;
+  color: white;
 }
 
 .loader::after {
-    content: '\2026';
-    display: inline-block;
-    overflow: hidden;
-    vertical-align: bottom;
-    animation: dots steps(4, end)2s infinite;
-    width: 0px;
+  content: "\2026";
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+  animation: dots steps(4, end) 2s infinite;
+  width: 0px;
 }
 
 @keyframes dots {
-    to {
-        width: 1em;
-    }
+  to {
+    width: 1em;
+  }
 }
 
 .Start {
-    height: 30em;
-   margin-top: 3em;
-
+  height: 30em;
+  margin-top: 3em;
 }
 
-#StartingBtn{
-
-    alignment: center;
-    position: absolute;
-    margin:  1em 0 0 0;
+#StartingBtn {
+  alignment: center;
+  position: absolute;
+  margin: 1em 0 0 0;
 }
 
-#EnterButton,.genderbtn
-{
-    alignment: center;
-    display: inline-block;
-    position: absolute;
-    margin: 12em 0 0 0;
-    height: 2.5em;
-    width: 8em;
+#EnterButton,
+.genderbtn {
+  alignment: center;
+  display: inline-block;
+  position: absolute;
+  margin: 12em 0 0 0;
+  height: 2.5em;
+  width: 8em;
 }
 
-.genderbtn
-{
-    display: none;
-    height: 2em;
+.genderbtn {
+  display: none;
+  height: 2em;
 }
 
-#fembtn{
-    margin-top: 2em;
+#fembtn {
+  margin-top: 2em;
 }
-#malebtn{
-    margin-top: 7em;
-}
-
-
-
-
-#MCsName{
-    alignment: center;
-    position: absolute;
-    margin: 15em 0 0 0;
-    height: 2em;
-    width: 17em;
+#malebtn {
+  margin-top: 7em;
 }
 
-
-
-#EnterText,#gendertext {
-    alignment: center;
-    position: absolute;
-    color: rgb(210, 245, 237);
-    margin: -5em 0 0 0;
+#MCsName {
+  alignment: center;
+  position: absolute;
+  margin: 15em 0 0 0;
+  height: 2em;
+  width: 17em;
 }
 
-.container-md{
-    display: flex;
-    align-items: center;
-    align-content: center;
-    justify-content: center;
+#EnterText,
+#gendertext {
+  alignment: center;
+  position: absolute;
+  color: rgb(210, 245, 237);
+  margin: -5em 0 0 0;
 }
 
-#textbox{
-    display: none;
-    background: #000;
-    color: #fff;
-    opacity: 50%;
-    position: absolute;
-    width: 50em;
-    height: 7.5em;
-    margin-top: 23em;
-    padding: 0.5em 0.5em 0.5em 0.5em;
+.container-md {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
 }
 
-#SpeakingPerson{
-    display: none;
-    background: #000;
-    color: #fff;
-    opacity: 50%;
-    position: absolute;
-    margin-top: 12em;
-    width: 10em;
-    text-align: center;
-    border: 1px solid whitesmoke;
+#textbox {
+  display: none;
+  background: #000;
+  color: #fff;
+  opacity: 50%;
+  position: absolute;
+  width: 50em;
+  height: 7.5em;
+  margin-top: 23em;
+  padding: 0.5em 0.5em 0.5em 0.5em;
 }
 
+#SpeakingPerson {
+  display: none;
+  background: #000;
+  color: #fff;
+  opacity: 50%;
+  position: absolute;
+  margin-top: 12em;
+  width: 10em;
+  text-align: center;
+  border: 1px solid whitesmoke;
+}
 
+#opt1{
+  position: absolute;
+  margin: 12em 10em 0 0;
+  height: 2.5em;
+  z-index: 3;
+}
 
+#opt2{
+  position: absolute;
+  margin: 12em 0 0 10em;
+  height: 2.5em;
+  z-index: 3;
+}
 
-
+#charLeft{
+  display: inline-block;
+  width: 20em;
+  margin: 4em 0 0 15em;
+  position: absolute;
+}

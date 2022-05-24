@@ -1,133 +1,269 @@
-import { readFileSync } from 'fs';
+import {HttpClient, Scene} from "./server-client";
+import * as $ from "jquery";
+// @ts-ignore
+import images from "./../../images/backgrounds/*";
+// @ts-ignore
+import charImages from "./../../images/Characters/*";
 
-export class Scene{
-    background: string;
-    text: string;
-    CharacterRight: string;
-    Character2Left: string;
-    McName : string;
-    McGender : string;
-    next: Scene;
+let curScene: SceneManager;
+let McName;
+let McGender;
+const MAXSCENES = 6;
+let ChosenOption = 0;
+let buttonVisible = false;
 
-    constructor(name:string,gender:string) {
-        this.background = '../../images/background/SpawnPoint.png';
-        this.CharacterRight = 'none';
-        this.Character2Left = 'none';
-        this.text =  "I slowly awoke from my sleep. I was still a little tired, but I had the feeling as if something was off.\n" +
-            "Looking at my surroundings I realized that I wasn't in my Room, but in a rather weird one. The room was more or less\n" +
-            "empty, the only furniture was the bed and a shelf beside the window. There is dust and spiderwebs everywhere and the\n" +
-            "walls are dirty. A part of me thought that I was just imagining things, but after a while of getting fully awake I\n" +
-            "started to become a bit worried. Is there nobody here? Suddenly I heard a strange noise coming from downstairs";
-        this.McName = name;
-        this.McGender = gender;
+
+
+class SceneManager {
+    private readonly client: HttpClient;
+    public headScene: Scene;
+    public splitText;
+
+    constructor() {
+        this.client = new HttpClient();
+        this.splitText = [];
     }
 
-    public BuildScene() {
-        document.getElementById('SpeakingPerson').innerText = this.McName;
-        document.getElementById('textbox').innerText = this.text;
+    public async readScene(): Promise<void> {
+        if (this.headScene == null) {
+            this.headScene = await this.client.getScene(0);
+        } else {
+            console.log("Changing Scene");
+            console.log(`ChosenOption: ${ChosenOption}`);
+            this.headScene = await this.client.getScene(ChosenOption);
+        }
     }
 
+    public HandleTextBox() {
+        if(this.headScene.speakingPerson[0] == "Mc")
+        {
+            document.getElementById("SpeakingPerson").innerText = McName;
+        }
+        else
+        {
+            document.getElementById("SpeakingPerson").innerText = this.headScene.speakingPerson[0];
+        }
+
+            console.log("show first");
+            this.splitText = this.headScene.text.split(";");
+    }
 
     ChangeScene() {
-        const imageUrl = new URL(
-            '../../images/backgrounds/kitchen.png',
-            // @ts-ignore
-            import.meta.url
-        );
-        (document.getElementById('Start') as HTMLImageElement).src = imageUrl.href;
+        const start = <HTMLImageElement>document.getElementById("Start");
+        start.src = images[this.headScene.background];
+        this.HandleTextBox();
+    }
+
+    DisplayText(i: number): number {
+        console.log(`ArrayLänge:${this.splitText.length}`);
+        console.log(`headscene: ${curScene.headScene.text}`);
+        console.log(`Done: ${curScene.headScene.done}`);
+        console.log(this.splitText);
+        console.log(`click i: ${i}`);
+
+        function OptionClicked(opt1: JQuery<HTMLElement>, opt2: JQuery<HTMLElement>) {
+            console.log("Button clicked");
+            curScene.headScene.done = true;
+            opt1.css('visibility', 'hidden');
+            opt2.css('visibility', 'hidden');
+
+            opt1.remove();
+            opt2.remove();
+            buttonVisible = false;
+        }
+
+
+        function ShowCharacters(headScene: Scene) {
+            if(headScene.characterLeft[i] != '')
+            {
+                const charLeft = <HTMLImageElement>document.getElementById("charLeft");
+                charLeft.src = charImages[headScene.characterLeft[i]];
+                charLeft.style.height = "29em";
+                charLeft.style.display = "inline-block";
+                charLeft.style.width = "20em";
+                charLeft.style.margin = "2em 0 0 15em";
+                charLeft.style.position = "absolute";
+            }
+            else
+            {
+                const charLeft = <HTMLImageElement>document.getElementById("charLeft");
+                charLeft.src = "";
+                charLeft.style.display = "none";
+            }
+            if(headScene.characterRight[i] != '')
+            {
+                const charRight = <HTMLImageElement>document.getElementById("charRight");
+                charRight.src = charImages[headScene.characterRight[i]];
+                charRight.style.height = "29em";
+                charRight.style.display = "inline-block";
+                charRight.style.width = "20em";
+                charRight.style.margin = "2em -15em";
+                charRight.style.position = "absolute";
+            }
+            else
+            {
+                const charRight = <HTMLImageElement>document.getElementById("charRight");
+                charRight.src = "";
+                charRight.style.display = "none";
+            }
+        }
+        console.log(this.headScene.next2);
+        if (i < this.splitText.length) {
+            console.log("changing text");
+            document.getElementById("textbox").innerText = this.splitText[i];
+            console.log(i);
+            console.log(this.headScene.characterLeft);
+            console.log(this.headScene.characterLeft[i]);
+            ShowCharacters(this.headScene);
+            if(this.headScene.speakingPerson[i] == "Mc")
+            {
+                document.getElementById("SpeakingPerson").innerText = McName;
+            }
+            else
+            {
+                document.getElementById("SpeakingPerson").innerText = this.headScene.speakingPerson[i];
+            }
+
+            i++;
+            console.log(i);
+            return i;
+        } else if (+this.headScene.next2 === -1) ///abprüfen ob es eine Verzweigung(Entscheidung) gibt
+        {
+            console.log("no options => change");
+            ChosenOption = +curScene.headScene.next1;
+            curScene.headScene.done = true;
+            i = 1;
+            return i;
+        } else {
+            const opt1 = $('#opt1');
+            const opt2 = $('#opt2');
+            console.log("make buttons visible");
+            const splitter1 = this.headScene.next1.split(';');
+            const splitter2 = this.headScene.next2.split(';');
+            opt1.css('visibility', 'visible');
+            opt2.css('visibility', 'visible');
+            buttonVisible = true;
+            opt1.text(splitter1[1]);
+            opt2.text(splitter2[1]);
+
+            opt1.on('click', () => {
+                ChosenOption = +splitter1[0];
+                OptionClicked(opt1, opt2);
+                console.log(`i after clickMethod : ${i}`);
+            });
+            opt2.on('click', () => {
+                ChosenOption = +splitter2[0];
+                OptionClicked(opt1, opt2);
+            });
+            return 0;
+        }
     }
 }
 
-
 function HideGenderElements() {
-    document.getElementById('gendertext').style.display = 'none';
-    document.getElementById('fembtn').style.display = 'none';
-    document.getElementById('malebtn').style.display = 'none';
-    document.getElementById('divbtn').style.display = 'none';
-    document.getElementById('textbox').style.display = 'inline-block';
-    document.getElementById('SpeakingPerson').style.display = 'inline-block';
+    document.getElementById("gendertext").style.display = "none";
+    document.getElementById("fembtn").style.display = "none";
+    document.getElementById("malebtn").style.display = "none";
+    document.getElementById("divbtn").style.display = "none";
+    document.getElementById("textbox").style.display = "inline-block";
+    document.getElementById("SpeakingPerson").style.display = "inline-block";
 }
-
-
-
 
 function ManageName() {
-    const enterButton = document.getElementById('EnterButton');
-    enterButton.style.display = 'none';
-    const McName = document.getElementById('MCsName');
-    McName.style.display = 'none';
-    document.getElementById('EnterText').style.display = 'none';
-    document.getElementById('gendertext').style.display = 'none';
-    document.getElementById('StartingBtn').addEventListener('click', () => {
-        document.getElementById('StartingBtn').style.display = 'none';
-        enterButton.style.display = 'inline-block';
-        McName.style.display = 'inline-block';
-        document.getElementById('EnterText').style.display = 'inline-block';
-
-    })
-
-
+    const enterButton = document.getElementById("EnterButton");
+    enterButton.style.display = "none";
+    const McName = document.getElementById("MCsName");
+    McName.style.display = "none";
+    document.getElementById("EnterText").style.display = "none";
+    document.getElementById("gendertext").style.display = "none";
+    document.getElementById("StartingBtn").addEventListener("click", () => {
+        document.getElementById("StartingBtn").style.display = "none";
+        enterButton.style.display = "inline-block";
+        McName.style.display = "inline-block";
+        document.getElementById("EnterText").style.display = "inline-block";
+    });
 }
+
 /*An und Ausschalten der Sichtbarkeit
   je nach dem welchen genderButton man auswählt, wird dem gender dieses Zugeschrieben
  */
-function ManageGender(): string {
-    document.getElementById('gendertext').style.display = 'inline-block';
-    document.getElementById('fembtn').style.display = 'inline-block';
-    document.getElementById('malebtn').style.display = 'inline-block';
-    document.getElementById('divbtn').style.display = 'inline-block';
-    let gender = '';
-    document.getElementById('fembtn').addEventListener('click', () => {
-        gender = 'female'
+function ManageGender() {
+    document.getElementById("gendertext").style.display = "block";
+    document.getElementById("fembtn").style.display = "block";
+    document.getElementById("malebtn").style.display = "block";
+    document.getElementById("divbtn").style.display = "block";
+    document.getElementById("fembtn").addEventListener("click", () => {
+        McGender = "female";
         HideGenderElements(); // stellt Sichtbarkeit aus
-    })
-    document.getElementById('malebtn').addEventListener('click', () => {
-        gender = 'male'
+    });
+    document.getElementById("malebtn").addEventListener("click", () => {
+        McGender = "male";
         HideGenderElements();
-    })
-    document.getElementById('divbtn').addEventListener('click', () => {
-        gender = 'divers';
+    });
+    document.getElementById("divbtn").addEventListener("click", () => {
+        McGender = "divers";
         HideGenderElements();
-
-    })
-    return gender;
+    });
 }
 
-let currentScene : Scene = null;
-
-function init() {
-
+async function init() {
+    const opt1 = $('#opt1');
+    const opt2 = $('#opt2');
+    opt1.css('visibility', 'hidden');
+    opt2.css('visibility', 'hidden');
     ManageName();
-    let Mcname;
-    let McGender;
-    document.getElementById('EnterButton').addEventListener('click', () => {
-        const name = <HTMLInputElement>document.getElementById('MCsName');
-        Mcname = name.value;
-        document.getElementById('EnterButton').style.display = 'none';
-        document.getElementById('MCsName').style.display = 'none';
-        document.getElementById('EnterText').style.display = 'none';
+    document.getElementById("EnterButton").addEventListener("click", async () => {
+        const name = <HTMLInputElement>document.getElementById("MCsName");
+        McName = name.value;
+        if(McName == "")
+        {
+            alert("no Name entered");
+        }
+        else if(McName.length > 18)
+        {
+            alert("name too long");
+        }
+        else
+        {
+            document.getElementById("EnterButton").style.display = "none";
+            document.getElementById("MCsName").style.display = "none";
+            document.getElementById("EnterText").style.display = "none";
+            ManageGender();
 
-        McGender = ManageGender();
-        currentScene = new Scene(Mcname,McGender);
+            curScene = new SceneManager();
+            await curScene.readScene();
+            await curScene.ChangeScene();
+            document.getElementById("textbox").innerText = curScene.splitText[0];
+            let i = 1;
+            document.getElementById("Start").addEventListener("click", async () => {
+                if (ChosenOption >= MAXSCENES) {
+                    ///Ending
+                    console.log("ending");
+                }
+                else{
+                    if(!buttonVisible)
+                    {
+                        i = curScene.DisplayText(i);
+                    }
+                    console.log(`Id: ${curScene.headScene.id}`);
+                    console.log(`Done: ${curScene.headScene.done}`);
+                    if (curScene.headScene.done == true && ChosenOption < MAXSCENES) {
+                        console.log("in change");
+                        await curScene.readScene();
+                        await curScene.ChangeScene();
+                        document.getElementById("textbox").innerText = curScene.splitText[0];
+                    }
+                }
 
-        currentScene.BuildScene();
-        const playground = document.getElementById('Start');
-        playground.addEventListener('click',() =>{
-            currentScene.ChangeScene();
-            //Todo: next block of text.If no text, then next Scene
-        })
-
-
-    })
+            });
+        }
 
 
 
+    });
 }
 
-document.addEventListener('DOMContentLoaded', (event) => {
-    init();
+document.addEventListener("DOMContentLoaded", async event => {
+    await init();
 });
 
-function SetDisplay (element: HTMLElement, display: string):void {
-    element.style.display = display;
-}

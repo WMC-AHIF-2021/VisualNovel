@@ -1,69 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <link href="styles.css" rel="stylesheet" type="text/css">
+  <head>
+    <meta charset="UTF-8" />
+    <link href="styles.css" rel="stylesheet" type="text/css" />
     <title>character-description</title>
-    <link rel="icon" href="../images/additional/logo.png" type="image/icon type">
-</head>
+    <link
+      rel="icon"
+      href="../images/additional/logo.png"
+      type="image/icon type"
+    />
+  </head>
 
-<body>
+  <body>
     <div id="loadingscreen">
-        <div class="loader">Loading</div>
+      <div class="loader">Loading</div>
     </div>
     <div id="main-content">
-        <div class="centered-menu">
-            <ul class="navigationBar">
-                <li><a href="./index.html">Home</a></li>
-                <li><a href="./character-description.html">Characters</a></li>
-                <li><a href="./story-description.html">Story</a></li>
-                <li><a href="./VisualNovel-history.html">History</a></li>
-                <li><a href="./game.html">Game</a></li>
-                <li><a href="./aboutUs.html">About us</a></li>
-            </ul>
-        </div>
-        <div class="whiteBox">
-            <article class="margin">
-                <br>
-                <h1 class="othersTitle">Characters</h1>
+      <div class="centered-menu">
+        <ul class="navigationBar">
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./character-description.html">Characters</a></li>
+          <li><a href="./story-description.html">Story</a></li>
+          <li><a href="./VisualNovel-history.html">History</a></li>
+          <li><a href="./game.html">Game</a></li>
+          <li><a href="./aboutUs.html">About us</a></li>
+        </ul>
+      </div>
+      <div class="whiteBox">
+        <article class="margin">
+          <br />
+          <h1 class="othersTitle">Characters</h1>
 
-                <table>
-                    <tr>
-                        <td><img src="../images/Characters/mc.png" alt="mc" class="ChDescImg"></td>
-                        <td>
-                            <h2>Main Character</h2>
-                            <p>
-                                The MC finds themself in a world unknown to them.<br> They want to find a way back to their homeland and regain their lost memories.<br> That's not really easy in a world where monsters and humans are at war.<br> Their
-                                appearance is up to the players imagines.<br> What influence will their decisions have on the future?<br>
-                            </p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td> <img src="../images/Characters/vita.png" alt="img of the Character" class="ChDescImg"></td>
-                        <td>
-                            <h2>Vita</h2>
-                            <p>
-                                Vita is cat-boy and a member of the organisation "Shelter".<br> He's the first Character the player meets.<br> His blond medium long hair is tied in a man-bun<br> One of his wishes is for the war to end, so that everyone
-                                could have a normal life again.
-                            </p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><img src="../images/Characters/Steak.png" alt="img of the Character" class="ChDescImg"></td>
-                        <td>
-                            <h2>Steak</h2>
-                            <p>
-                                Steak is the leader and founder of the organisation "Shelter".<br> Her Skin is white on the left side and black on the other side.<br> She has two horns and green eyes.<br> She founded the organisation to help those who
-                                don't want to be involved with the ongoing war<br>
-                            </p>
-                        </td>
-                    </tr>
-                </table>
-            </article>
-        </div>
+          <table>
+            <tr>
+              <td>
+                <img
+                  src="../images/Characters/mc.png"
+                  alt="mc"
+                  class="ChDescImg"
+                />
+              </td>
+              <td>
+                <h2>Main Character</h2>
+                <p>
+                  The MC finds themself in a world unknown to them.<br />
+                  They want to find a way back to their homeland and regain
+                  their lost memories.<br />
+                  That's not really easy in a world where monsters and humans
+                  are at war.<br />
+                  Their appearance is up to the players imagines.<br />
+                  What influence will their decisions have on the future?<br />
+                </p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="../images/Characters/vita.png"
+                  alt="img of the Character"
+                  class="ChDescImg"
+                />
+              </td>
+              <td>
+                <h2>Vita</h2>
+                <p>
+                  Vita is cat-boy and a member of the organisation "Shelter".<br />
+                  He's the first Character the player meets.<br />
+                  His blond medium long hair is tied in a man-bun<br />
+                  One of his wishes is for the war to end, so that everyone
+                  could have a normal life again.
+                </p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="../images/Characters/Steak.png"
+                  alt="img of the Character"
+                  class="ChDescImg"
+                />
+              </td>
+              <td>
+                <h2>Steak</h2>
+                <p>
+                  Steak is the leader and founder of the organisation
+                  "Shelter".<br />
+                  Her Skin is white on the left side and black on the other
+                  side.<br />
+                  She has two horns and green eyes.<br />
+                  She founded the organisation to help those who don't want to
+                  be involved with the ongoing war<br />
+                </p>
+              </td>
+            </tr>
+          </table>
+        </article>
+      </div>
     </div>
-    <script src="scripts/loadingscreen.ts"></script>
-</body>
 
+    <script type="module">
+      import * as loadingScreen from "./scripts/loadingscreen";
+    </script>
+  </body>
 </html>
