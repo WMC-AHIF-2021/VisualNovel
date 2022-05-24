@@ -10,37 +10,37 @@ I rushed down the stairs to find myself in a kitchen-like area. I kept wondering
 crawling on top of one of the counters. It's a round creature with wings and large teeth at the bottom of its face. There is an old frypan on
 one of the counters. I could attack it, but maybe I should try to communicate with it?
 A: Attack it / B: Try to communicate
+
 B: I tried to get closer to it when it suddenly launched at me and bit my right arm. "AAAAAHH", I screamed. I panicked. Why is this happening to me?
 Seconds later someone else ran into the house and knocked the creature out.
 ???(Vita)
 "Are you okay? I heard screaming."
 MC
-"The thing bit me. Do you have anything to stop the bleeding?"
+"That thing bit me. Do you have anything to stop the bleeding?"
 He reached into his bag and took out some bandeges.
 ???
-"Here, have these."
+"Here, use these."
 MC
-I took the bandages and wrapped them arround my right arm.
-"Thank you for saving me. Do you perhaps know where we are and where I can find other people?"
+I took the bandages and wrapped them arround my arm.
+"Thank you for saving me. Do you know where we are? Where is everyone?"
 ???(Vita)
-"Oh, did you get lost? Well i don't know the name of this place, but if you are searching for the village it should be somewhere in the west.
-How did you even end up in a place like this?"
+"Oh, did you get lost? Well, I don't know the name of this place, but if you're searching for the village it should be somewhere in the west.
+How did you end up in a place like this?"
 Mc
-Should I tell him that i suddenly woke up in this place without knowing where I am?
-I mean he just saved me and might be able to help me out, so why not.
-"I actually dont't know that myself. I woke up in this abonded house without any memories of my past"
+He might be able to help me out. Since he just saved my life, I might as well trust him.
+"I actually dont't know that myself. I woke up in this abandoned house without any memories."
 ???(Vita)
-"What?!Thats terrible. Do you have a place to stay? If you want I can bring you to where me and some others live."
+"Really? That sucks. Do you need a place to stay? If you want I'll show you where my group and I take 'shelter'. Hehe."
 MC
-I dont really know what to say, but its probably the best option I have, especially becaus he can fight and who knows how many of those little beasts are out
-there, just waiting to attack me.
-"hmm..its good for start to get somewhere safe and get the bite treated, so i will gladly accept your offer. I really can't thank you enough"
+I dont really know what to say, but it's probably the best option I have, especially since he can fight. Who knows how many of those little beasts are out
+there? Just waiting to attack me?
+"Hmm..it's a good start getting the bite treated, so I guess I will accept your offer. I really can't thank you enough."
 ???
-"its no problem, you' are welcome. Come on let's get going"
+"No worries, you're welcome. Come on, let's get going."
 
 Scene: Landschaft
 MC
-While walking out of the house with vita i noticed that there where more destroyed buildings. How did I end up in a
+While walking out of the house with Vita noticed that there where more destroyed buildings. How did I end up in a
 place like this? Did i hurt my head or someone kidnapped me and brought me here?
 ???(Vita)
 "Come to think of it..we havent exchanged names yet, have we? The name's Vita, what about you? Or do you also not remember your name?"
@@ -58,26 +58,38 @@ Vita
 "Yeah it shouldnt be a big deal for them, if someone stays for a while. Maybe they will be a bit sceptical at first, but the most are nice people, trust me.
 I'm sorry that i can't take you to the human village, but its better for me its better to not get involved with them. Humans and monster are at war, so you should
 better stay away from both sides, but of course you can feel free do whatever you want and go to the village. I just wanted to warn you.
+
 Oh looks like we are here. Just walk into the woods. There should be a huge base. You want something to eat?"
 Scene: Shelter
 Mc
+Me and the stranger named Vita entered the forest. He was greeting some of the others who lived here.There where actually lots of other people.I didnt expect so many to be here.
+There were some small buildings, tents and actually much free space.
+Vita
+"This place may not be the most comfortable one, but it has its benefits. Hey, how about we introduce you to our leader?"
+MC
+We went to the direction their so called leader was at. Do those others really not mind me? Many are looking at me as if i was some kind of vilain.
+Vita stopped walking infront of three creatures that looked as if they were discussing something. When they were finsihed two of them walked away,
+while the one that stayed turned to us. She was tall, had black and white skin and two long horns as well as a deer-like horn growing out of her forehead.
+???(Steak)
+"Can i help you with something, Vita? I see you brought someone else here.", She turned to look at me for a few seconds with curious eyes. Then she turned her gaze back to Vita.
+Vita
+"Well I stumpled across {pronouns} in the abonded village.{pronouns} name is {McName}. {pronouns} said that {pronouns} suddenly woke up in one of the houses and claims to have no memories of {pronouns} past. So I decided to bring {pronouns} here. I hope thats alright with you"
+???(Steak)
+"Ah, don't worry. I don't mind more people staying here."
+Then she turned to look at me.
+"I am Steak, its nice to meet you. If you have any questions or need help with something just come to me or Vita. We will be happy to be of help." Steak gave me a warm smile. "Hold on, Vita said you lost your memorie, right?I hope that doesnt trouble you too much. If you dont mind me asking, what do you plan to do, now that you are here in another world?"
+MC
+What I plan to do? I haven't really thought of that. Of course I want togo home, but not remembering anything is also scary thought. What if my previous life was
+actually horrible? Suddenly the image of the round creature flashed before me eyes. It was actually pretty creepy and there are probably worse livin beings here.
+Just thinking of it made a shiver run down my spine. So what am i going to answer?
 "yeah that would be nice."
 
+If bitten:
+Suddenly i felt an aching pain in my head. It hurt so much that i couldn't think clearly. Slowly my sight started to fate and..
 
+Blackscreen
 
+I opened my eyes to see that i was laying on a matress in a tent. What happened, wasnt I just talking with Steak?Thats when a funny looking, tiny, old creature came into the tent.
 
-
-
-
-
-
-
- 
-
-
-
-
-
-
-
-
+Doctor
+"Oho I see you are finally awake. Steak brought you here after you passed out. We took a look at your wound and treated it. It shouldn't be a big deal. Now if you could please wait for a moment. The doctor went outside again.
