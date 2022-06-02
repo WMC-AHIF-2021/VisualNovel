@@ -249,7 +249,30 @@ async function init() {
             await curScene.ChangeScene();
             document.getElementById("textbox").innerText = curScene.splitText[0];
             let i = 1;
-            document.getElementById("Start").addEventListener("click", async () => {
+            //TODO! Finish clickable
+            const elementsOfClickable = document.getElementsByClassName("clickable");
+            for(let count =0;count<elementsOfClickable.length;count++){
+                elementsOfClickable[count].addEventListener("click",async ()=>{
+                    if (ChosenOption >= MAXSCENES) {
+                        ///Ending
+                        console.log("ending");
+                    }
+                    else {
+                        if (!buttonVisible) {
+                            i = curScene.DisplayText(i);
+                        }
+                        console.log(`Id: ${curScene.headScene.id}`);
+                        console.log(`Done: ${curScene.headScene.done}`);
+                        if (curScene.headScene.done == true && ChosenOption < MAXSCENES) {
+                            console.log("in change");
+                            await curScene.readScene();
+                            await curScene.ChangeScene();
+                            document.getElementById("textbox").innerText = curScene.splitText[0];
+                        }
+                    }
+                });
+            }
+            /*document.getElementsByClassName("clickable").addEventListener("click", async () => {
                 if (ChosenOption >= MAXSCENES) {
                     ///Ending
                     console.log("ending");
@@ -269,11 +292,8 @@ async function init() {
                     }
                 }
 
-            });
+            });*/
         }
-
-
-
     });
 }
 
