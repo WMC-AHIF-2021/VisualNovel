@@ -249,7 +249,6 @@ async function init() {
             await curScene.ChangeScene();
             document.getElementById("textbox").innerText = curScene.splitText[0];
             let i = 1;
-            //TODO! Finish clickable
             const elementsOfClickable = document.getElementsByClassName("clickable");
             for(let count =0;count<elementsOfClickable.length;count++){
                 elementsOfClickable[count].addEventListener("click",async ()=>{
