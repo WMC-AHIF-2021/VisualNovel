@@ -6,8 +6,9 @@ import images from "./../../images/backgrounds/*";
 import charImages from "./../../images/Characters/*";
 
 let curScene: SceneManager;
-let McName;
-let McGender;
+let McName;//dbjson: [
+let McPronouns1;//dbjson: {
+let McPronouns2;//dbjson: }
 const MAXSCENES = 6;
 let ChosenOption = 0;
 let buttonVisible = false;
@@ -110,6 +111,7 @@ class SceneManager {
         console.log(this.headScene.next2);
         if (i < this.splitText.length) {
             console.log("changing text");
+            this.PrintNameAndGender();
             document.getElementById("textbox").innerText = this.splitText[i];
             console.log(i);
             console.log(this.headScene.characterLeft);
@@ -158,7 +160,16 @@ class SceneManager {
             return 0;
         }
     }
+    private PrintNameAndGender(){
+        for(let i = 0; i < this.splitText.length; i++){
+            this.splitText[i] =this.splitText[i].replaceAll('{', McPronouns1);
+            this.splitText[i] = this.splitText[i].replaceAll('}', McPronouns2);
+            this.splitText[i] = this.splitText[i].replaceAll('[', McName);
+        }
+    }
 }
+
+
 
 function HideGenderElements() {
     document.getElementById("gendertext").style.display = "none";
@@ -193,15 +204,18 @@ function ManageGender() {
     document.getElementById("malebtn").style.display = "block";
     document.getElementById("divbtn").style.display = "block";
     document.getElementById("fembtn").addEventListener("click", () => {
-        McGender = "female";
+        McPronouns1 = "she";
+        McPronouns2 = "her";
         HideGenderElements(); // stellt Sichtbarkeit aus
     });
     document.getElementById("malebtn").addEventListener("click", () => {
-        McGender = "male";
+        McPronouns1 = "he";
+        McPronouns2 = "his";
         HideGenderElements();
     });
     document.getElementById("divbtn").addEventListener("click", () => {
-        McGender = "divers";
+        McPronouns1 = "they";
+        McPronouns2 = "their";
         HideGenderElements();
     });
 }
