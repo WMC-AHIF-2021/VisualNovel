@@ -11,6 +11,7 @@ let McGender;
 const MAXSCENES = 6;
 let ChosenOption = 0;
 let buttonVisible = false;
+let bitten = false;
 
 
 class SceneManager {
@@ -145,6 +146,10 @@ class SceneManager {
                 ChosenOption = curScene.headScene.next1;
                 OptionClicked(opt1, opt2);
                 console.log(`i after clickMethod : ${i}`);
+                if(this.headScene.id == 1)
+                {
+                    bitten = true;
+                }
             });
             opt2.on('click', () => {
                 ChosenOption = curScene.headScene.next2;
@@ -234,6 +239,7 @@ async function init() {
                 if (ChosenOption >= MAXSCENES) {
                     ///Ending
                     console.log("ending");
+                    alert("to be continued soon");
                 }
                 else{
                     if(!buttonVisible)
