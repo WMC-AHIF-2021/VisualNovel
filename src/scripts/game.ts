@@ -6,12 +6,14 @@ import images from "./../../images/backgrounds/*";
 import charImages from "./../../images/Characters/*";
 
 let curScene: SceneManager;
-let McName;
-let McGender;
+let McName;//dbjson: [
+let McPronouns1;//dbjson: {
+let McPronouns2;//dbjson: }
 const MAXSCENES = 6;
 let ChosenOption = 0;
 let buttonVisible = false;
 let bitten = false;
+
 
 
 class SceneManager {
@@ -107,9 +109,10 @@ class SceneManager {
                 charRight.style.display = "none";
             }
         }
-
+        console.log(this.headScene.next2);
         if (i < this.splitText.length) {
             console.log("changing text");
+            this.PrintNameAndGender();
             document.getElementById("textbox").innerText = this.splitText[i];
             console.log(i);
             console.log(this.headScene.characterLeft);
@@ -127,10 +130,10 @@ class SceneManager {
             i++;
             console.log(i);
             return i;
-        } else if (curScene.headScene.next2 === -1) ///abprüfen ob es eine Verzweigung(Entscheidung) gibt
+        } else if (+this.headScene.next2 === -1) ///abprüfen ob es eine Verzweigung(Entscheidung) gibt
         {
             console.log("no options => change");
-            ChosenOption = curScene.headScene.next1;
+            ChosenOption = +curScene.headScene.next1;
             curScene.headScene.done = true;
             i = 1;
             return i;
@@ -138,12 +141,16 @@ class SceneManager {
             const opt1 = $('#opt1');
             const opt2 = $('#opt2');
             console.log("make buttons visible");
+            const splitter1 = this.headScene.next1.split(';');
+            const splitter2 = this.headScene.next2.split(';');
             opt1.css('visibility', 'visible');
             opt2.css('visibility', 'visible');
             buttonVisible = true;
+            opt1.text(splitter1[1]);
+            opt2.text(splitter2[1]);
 
             opt1.on('click', () => {
-                ChosenOption = curScene.headScene.next1;
+                ChosenOption = +splitter1[0];
                 OptionClicked(opt1, opt2);
                 console.log(`i after clickMethod : ${i}`);
                 if(this.headScene.id == 1)
@@ -152,13 +159,22 @@ class SceneManager {
                 }
             });
             opt2.on('click', () => {
-                ChosenOption = curScene.headScene.next2;
+                ChosenOption = +splitter2[0];
                 OptionClicked(opt1, opt2);
             });
             return 0;
         }
     }
+    private PrintNameAndGender(){
+        for(let i = 0; i < this.splitText.length; i++){
+            this.splitText[i] =this.splitText[i].replaceAll('{', McPronouns1);
+            this.splitText[i] = this.splitText[i].replaceAll('}', McPronouns2);
+            this.splitText[i] = this.splitText[i].replaceAll('[', McName);
+        }
+    }
 }
+
+
 
 function HideGenderElements() {
     document.getElementById("gendertext").style.display = "none";
@@ -193,15 +209,18 @@ function ManageGender() {
     document.getElementById("malebtn").style.display = "block";
     document.getElementById("divbtn").style.display = "block";
     document.getElementById("fembtn").addEventListener("click", () => {
-        McGender = "female";
+        McPronouns1 = "she";
+        McPronouns2 = "her";
         HideGenderElements(); // stellt Sichtbarkeit aus
     });
     document.getElementById("malebtn").addEventListener("click", () => {
-        McGender = "male";
+        McPronouns1 = "he";
+        McPronouns2 = "his";
         HideGenderElements();
     });
     document.getElementById("divbtn").addEventListener("click", () => {
-        McGender = "divers";
+        McPronouns1 = "they";
+        McPronouns2 = "their";
         HideGenderElements();
     });
 }
@@ -235,7 +254,29 @@ async function init() {
             await curScene.ChangeScene();
             document.getElementById("textbox").innerText = curScene.splitText[0];
             let i = 1;
-            document.getElementById("Start").addEventListener("click", async () => {
+            const elementsOfClickable = document.getElementsByClassName("clickable");
+            for(let count =0;count<elementsOfClickable.length;count++){
+                elementsOfClickable[count].addEventListener("click",async ()=>{
+                    if (ChosenOption >= MAXSCENES) {
+                        ///Ending
+                        console.log("ending");
+                    }
+                    else {
+                        if (!buttonVisible) {
+                            i = curScene.DisplayText(i);
+                        }
+                        console.log(`Id: ${curScene.headScene.id}`);
+                        console.log(`Done: ${curScene.headScene.done}`);
+                        if (curScene.headScene.done == true && ChosenOption < MAXSCENES) {
+                            console.log("in change");
+                            await curScene.readScene();
+                            await curScene.ChangeScene();
+                            document.getElementById("textbox").innerText = curScene.splitText[0];
+                        }
+                    }
+                });
+            }
+            /*document.getElementsByClassName("clickable").addEventListener("click", async () => {
                 if (ChosenOption >= MAXSCENES) {
                     ///Ending
                     console.log("ending");
@@ -256,11 +297,8 @@ async function init() {
                     }
                 }
 
-            });
+            });*/
         }
-
-
-
     });
 }
 

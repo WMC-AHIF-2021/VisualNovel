@@ -10,7 +10,8 @@
         "dom",
         "es5",
         "scripthost",
-        "es2015.promise"
+        "es2015.promise",
+        "ES2021.String"
       ]
     },
     "include": ["src/scripts/**/*"],

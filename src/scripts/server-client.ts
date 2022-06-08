@@ -6,8 +6,8 @@ export interface Scene {
   characterRight: string;
   speakingPerson: string[];
   text: string;
-  next1: number;
-  next2: number;
+  next1: string;
+  next2: string;
   done: boolean;
 }
 
