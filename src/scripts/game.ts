@@ -98,7 +98,8 @@ class SceneManager {
                 charRight.style.height = "29em";
                 charRight.style.display = "inline-block";
                 charRight.style.width = "20em";
-                charRight.style.margin = "2em -15em";
+                charRight.style.margin = "2rem 0 0 0";
+                charRight.style.padding = "0 30rem 0 0";
                 charRight.style.position = "absolute";
             }
             else
