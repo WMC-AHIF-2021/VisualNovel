@@ -31,7 +31,7 @@ class SceneManager {
             this.headScene = await this.client.getScene(0);
         } else {
             console.log("Changing Scene");
-            console.log(`ChosenOption: ${ChosenOption}`);
+            console.log(`Chosen Option: ${ChosenOption}`);
             this.headScene = await this.client.getScene(ChosenOption);
         }
     }
