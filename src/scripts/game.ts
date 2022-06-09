@@ -9,6 +9,7 @@ let curScene: SceneManager;
 let McName;//dbjson: [
 let McPronouns1;//dbjson: {
 let McPronouns2;//dbjson: }
+let isBitten = false;
 const MAXSCENES = 6;
 let ChosenOption = 0;
 let buttonVisible = false;
@@ -148,6 +149,11 @@ class SceneManager {
             opt1.text(splitter1[1]);
             opt2.text(splitter2[1]);
 
+            if(opt1.text() ==="Communicate"|| opt2.text()==="Communicate"){
+                isBitten =true;
+                console.log(`is Bitten: ${isBitten}`);
+            }
+
             opt1.on('click', () => {
                 ChosenOption = +splitter1[0];
                 OptionClicked(opt1, opt2);
@@ -271,27 +277,6 @@ async function init() {
                     }
                 });
             }
-            /*document.getElementsByClassName("clickable").addEventListener("click", async () => {
-                if (ChosenOption >= MAXSCENES) {
-                    ///Ending
-                    console.log("ending");
-                }
-                else{
-                    if(!buttonVisible)
-                    {
-                        i = curScene.DisplayText(i);
-                    }
-                    console.log(`Id: ${curScene.headScene.id}`);
-                    console.log(`Done: ${curScene.headScene.done}`);
-                    if (curScene.headScene.done == true && ChosenOption < MAXSCENES) {
-                        console.log("in change");
-                        await curScene.readScene();
-                        await curScene.ChangeScene();
-                        document.getElementById("textbox").innerText = curScene.splitText[0];
-                    }
-                }
-
-            });*/
         }
     });
 }
