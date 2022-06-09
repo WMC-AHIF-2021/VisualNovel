@@ -51,8 +51,7 @@ class SceneManager {
     }
 
     ChangeScene() {
-        const start = <HTMLImageElement>document.getElementById("Start");
-        start.src = images[this.headScene.background];
+        $("#background").attr("src", images[this.headScene.background]);
         this.HandleTextBox();
     }
 
@@ -281,7 +280,7 @@ async function init() {
     });
 }
 
-document.addEventListener("DOMContentLoaded", async event => {
+document.addEventListener("DOMContentLoaded", async () => {
     await init();
 });
 
