@@ -10,7 +10,7 @@ let McName;//dbjson: [
 let McPronouns1;//dbjson: {
 let McPronouns2;//dbjson: }
 let isBitten = false; //immer zweite anweisung wenn true
-const MAXSCENES = 8;
+const MAXSCENES = 40;
 let nextScene = 0;
 let buttonVisible = false;
 
@@ -222,6 +222,9 @@ function ManageGender() {
 async function init() {
     const opt1 = $('#opt1');
     const opt2 = $('#opt2');
+    const restart = $('#RestartBtn');
+    restart.css('position','absolute')
+    restart.css('visibility', 'hidden');
     opt1.css('visibility', 'hidden');
     opt2.css('visibility', 'hidden');
     ManageName();
@@ -254,6 +257,10 @@ async function init() {
                     if (nextScene >= MAXSCENES) {
                         ///TODO! Ending
 
+                        restart.css('visibility', 'visible');
+                        restart.on('click',()=>{
+                            location.reload();
+                        });
                     }
                     else {
                         if (!buttonVisible) {
