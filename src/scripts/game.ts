@@ -9,11 +9,10 @@ let curScene: SceneManager;
 let McName;//dbjson: [
 let McPronouns1;//dbjson: {
 let McPronouns2;//dbjson: }
-const MAXSCENES = 6;
-let ChosenOption = 0;
+let isBitten = false; //immer zweite anweisung wenn true
+const MAXSCENES = 40;
+let nextScene = 0;
 let buttonVisible = false;
-let bitten = false;
-
 
 
 class SceneManager {
@@ -30,9 +29,7 @@ class SceneManager {
         if (this.headScene == null) {
             this.headScene = await this.client.getScene(0);
         } else {
-            console.log("Changing Scene");
-            console.log(`ChosenOption: ${ChosenOption}`);
-            this.headScene = await this.client.getScene(ChosenOption);
+            this.headScene = await this.client.getScene(nextScene);
         }
     }
 
@@ -45,26 +42,17 @@ class SceneManager {
         {
             document.getElementById("SpeakingPerson").innerText = this.headScene.speakingPerson[0];
         }
-
-            console.log("show first");
-            this.splitText = this.headScene.text.split(";");
+        this.splitText = this.headScene.text.split(";");
     }
 
     ChangeScene() {
-        const start = <HTMLImageElement>document.getElementById("Start");
-        start.src = images[this.headScene.background];
+        $("#background").attr("src", images[this.headScene.background]);
         this.HandleTextBox();
     }
 
     DisplayText(i: number): number {
-        console.log(`ArrayLänge:${this.splitText.length}`);
-        console.log(`headscene: ${curScene.headScene.text}`);
-        console.log(`Done: ${curScene.headScene.done}`);
-        console.log(this.splitText);
-        console.log(`click i: ${i}`);
 
-        function OptionClicked(opt1: JQuery<HTMLElement>, opt2: JQuery<HTMLElement>) {
-            console.log("Button clicked");
+        function OptionClicked(opt1: JQuery, opt2: JQuery) {
             curScene.headScene.done = true;
             opt1.css('visibility', 'hidden');
             opt2.css('visibility', 'hidden');
@@ -99,7 +87,8 @@ class SceneManager {
                 charRight.style.height = "29em";
                 charRight.style.display = "inline-block";
                 charRight.style.width = "20em";
-                charRight.style.margin = "2em -15em";
+                charRight.style.margin = "2rem 0 0 0";
+                charRight.style.padding = "0 30rem 0 0";
                 charRight.style.position = "absolute";
             }
             else
@@ -109,14 +98,9 @@ class SceneManager {
                 charRight.style.display = "none";
             }
         }
-        console.log(this.headScene.next2);
         if (i < this.splitText.length) {
-            console.log("changing text");
             this.PrintNameAndGender();
             document.getElementById("textbox").innerText = this.splitText[i];
-            console.log(i);
-            console.log(this.headScene.characterLeft);
-            console.log(this.headScene.characterLeft[i]);
             ShowCharacters(this.headScene);
             if(this.headScene.speakingPerson[i] == "Mc")
             {
@@ -128,19 +112,30 @@ class SceneManager {
             }
 
             i++;
-            console.log(i);
             return i;
-        } else if (+this.headScene.next2 === -1) ///abprüfen ob es eine Verzweigung(Entscheidung) gibt
+        } else if (+this.headScene.next2 === -1 ) ///abprüfen ob es eine Verzweigung(Entscheidung) gibt
         {
-            console.log("no options => change");
-            ChosenOption = +curScene.headScene.next1;
+            nextScene = +curScene.headScene.next1;
             curScene.headScene.done = true;
-            i = 1;
-            return i;
-        } else {
+            i=1;
+            return 1;
+        }
+        else if(this.headScene.biteImpact){
+            if(isBitten){
+                nextScene = +curScene.headScene.next1;
+                curScene.headScene.done = true;
+                i=1;
+                return 1;
+            }
+
+            nextScene = +curScene.headScene.next2;
+            curScene.headScene.done = true;
+            i=1;
+            return 1;
+        }
+        else {
             const opt1 = $('#opt1');
             const opt2 = $('#opt2');
-            console.log("make buttons visible");
             const splitter1 = this.headScene.next1.split(';');
             const splitter2 = this.headScene.next2.split(';');
             opt1.css('visibility', 'visible');
@@ -149,17 +144,16 @@ class SceneManager {
             opt1.text(splitter1[1]);
             opt2.text(splitter2[1]);
 
+
             opt1.on('click', () => {
-                ChosenOption = +splitter1[0];
+                nextScene = +splitter1[0];
                 OptionClicked(opt1, opt2);
-                console.log(`i after clickMethod : ${i}`);
-                if(this.headScene.id == 1)
-                {
-                    bitten = true;
+                if(opt1.text() ==="Communicate"){
+                    isBitten =true;
                 }
             });
             opt2.on('click', () => {
-                ChosenOption = +splitter2[0];
+                nextScene = +splitter2[0];
                 OptionClicked(opt1, opt2);
             });
             return 0;
@@ -228,6 +222,9 @@ function ManageGender() {
 async function init() {
     const opt1 = $('#opt1');
     const opt2 = $('#opt2');
+    const restart = $('#RestartBtn');
+    restart.css('position','absolute')
+    restart.css('visibility', 'hidden');
     opt1.css('visibility', 'hidden');
     opt2.css('visibility', 'hidden');
     ManageName();
@@ -257,18 +254,19 @@ async function init() {
             const elementsOfClickable = document.getElementsByClassName("clickable");
             for(let count =0;count<elementsOfClickable.length;count++){
                 elementsOfClickable[count].addEventListener("click",async ()=>{
-                    if (ChosenOption >= MAXSCENES) {
-                        ///Ending
-                        console.log("ending");
+                    if (nextScene >= MAXSCENES) {
+                        ///TODO! Ending
+
+                        restart.css('visibility', 'visible');
+                        restart.on('click',()=>{
+                            location.reload();
+                        });
                     }
                     else {
                         if (!buttonVisible) {
                             i = curScene.DisplayText(i);
                         }
-                        console.log(`Id: ${curScene.headScene.id}`);
-                        console.log(`Done: ${curScene.headScene.done}`);
-                        if (curScene.headScene.done == true && ChosenOption < MAXSCENES) {
-                            console.log("in change");
+                        if (curScene.headScene.done == true && nextScene < MAXSCENES) {
                             await curScene.readScene();
                             await curScene.ChangeScene();
                             document.getElementById("textbox").innerText = curScene.splitText[0];
@@ -276,33 +274,11 @@ async function init() {
                     }
                 });
             }
-            /*document.getElementsByClassName("clickable").addEventListener("click", async () => {
-                if (ChosenOption >= MAXSCENES) {
-                    ///Ending
-                    console.log("ending");
-                    alert("to be continued soon");
-                }
-                else{
-                    if(!buttonVisible)
-                    {
-                        i = curScene.DisplayText(i);
-                    }
-                    console.log(`Id: ${curScene.headScene.id}`);
-                    console.log(`Done: ${curScene.headScene.done}`);
-                    if (curScene.headScene.done == true && ChosenOption < MAXSCENES) {
-                        console.log("in change");
-                        await curScene.readScene();
-                        await curScene.ChangeScene();
-                        document.getElementById("textbox").innerText = curScene.splitText[0];
-                    }
-                }
-
-            });*/
         }
     });
 }
 
-document.addEventListener("DOMContentLoaded", async event => {
+document.addEventListener("DOMContentLoaded", async () => {
     await init();
 });
 
