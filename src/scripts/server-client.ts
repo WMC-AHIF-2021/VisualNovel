@@ -9,7 +9,7 @@ export interface Scene {
   next1: string;
   next2: string;
   done: boolean;
-  isBitten: boolean;
+  biteImpact: boolean;
 }
 
 export class HttpClient {
