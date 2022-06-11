@@ -11,7 +11,7 @@
         "next1" : "1",
         "next2" : "-1",
         "done" : false,
-        "isBitten": false
+        "biteImpact": false
     },
     {
       "id": 1,
@@ -23,7 +23,7 @@
       "next1" : "2;Communicate",
       "next2" : "3;Attack",
       "done": false,
-      "isBitten": false
+      "biteImpact": false
     },
     {
       "id": 2,
@@ -35,7 +35,7 @@
       "next1" : "4",
       "next2" : "-1",
       "done": false,
-      "isBitten": false
+      "biteImpact": false
     },
     {
       "id":3,
@@ -47,7 +47,7 @@
       "next1" : "4",
       "next2" : "-1",
       "done" : false,
-      "isBitten": false
+      "biteImpact": false
     },
     {
       "id": 4,
@@ -59,19 +59,94 @@
       "next1" : "5",
       "next2" : "-1",
       "done": false,
-      "isBitten": false
+      "biteImpact": false
     },
     {
       "id": 5,
-      "background" : "wald.png",
+      "background" : "Shelter.png",
       "characterLeft": ["vita.png","vita.png","vita.png","vita.png","vita.png","vita.png","vita.png","vita.png","vita.png","vita.png","vita.png","vita.png","vita.png","vita.png"],
       "characterRight": ["","","","","","Steak.png","Steak.png","Steak.png","Steak.png","Steak.png","Steak.png","Steak.png","Steak.png","Steak.png"],
       "speakingPerson": ["Mc","Vita","Mc","Mc","Mc","Mc","Steak","Vita","Vita","Steak","Steak","Steak","Mc","Mc"],
       "text":"Me and Vita entered the forest. He greeted some of the others who lived here.;There were a lot of other people. I didnt expect so many to be here. There were some small buildings, tents and actually a lot of free space.;\"This place may not be the most comfortable one, but it has its benefits. How about I introduce you to our leader first?\";We went to the direction their so-called leader was at. Do those others really not mind me? Many are looking at me as if i was some kind of villain.;Vita stopped walking when we arrived near three creatures that looked like they were discussing something. After they were done, two of them walked away while the one that stayed turned to us.; She was tall, her skin was split in half with one being white and the other being black. Two long horns as well as a deer-like one were growing out of her head.;\"Do you need something, Vita? I see you brought someone here.\"She turned to look at me for a few seconds with curious eyes. Then she averted her gaze back to Vita.;\"Well, I stumbled across a human in an abandoned village, } name is [. [ said that { suddenly woke up in one of the houses and claims to have no memories of } past.; So I decided to bring [ here. I hope that's alright with you?\";\"Yeah, don't worry. I don't mind more people staying here.;\"Then she turned to look at me more precisely.\"I am Steak, nice to meet you. If you have any questions or need help with something you can just come to me or Vita. We'll be happy to be of help.\"; Steak gave me a warm smile. \"Vita said you lost your memories, right? I hope that doesn't trouble you too much. If you don't mind me asking, what do you plan to do?;\"What I plan to do? I haven't really thought of that. Of course, I want to go home, but not remembering anything is scary. What if my previous life was actually horrible? ;Suddenly, the image of the round creature flashed before me eyes. It was actually pretty creepy and there are probably worse living beings here. Just thinking of it made a shiver run down my spine. So what am i going to answer?",
       "next1" : "6",
+      "next2" : "7",
+      "done" : false,
+      "biteImpact": true
+    },
+    {
+      "id": 6,
+      "background": "blackScreen.png",
+      "characterLeft": ["",""],
+      "characterRight": ["",""],
+      "speakingPerson": ["Mc","Mc"],
+      "text": "Suddenly I felt an aching pain in my head. It hurt so much that i couldn't think clear.; Slowly my sight started to fate and..",
+      "next1": "8",
+      "next2": "-1",
+      "done": false,
+      "biteImpact": false
+    },
+    {
+      "id": 7
+    },
+    {
+      "id": 8,
+      "background": "Zelt.png",
+      "characterLeft": ["","","Steak.png","Steak.png","Steak.png","Steak.png","Steak.png"],
+      "characterRight": ["","Doktor.png","Doktor.png","Doktor.png","Doktor.png","Doktor.png","Doktor.png"],
+      "speakingPerson": ["Mc","Doctor","Mc","Steak","Mc","Steak","Mc"],
+      "text": "I opened my eyes to see that I was laying on a mattress in a big tent. There were also others in the tent, who didn't look to well also laying on mattresses. What happened? Wasn't I just talking with Steak?That's when a funny looking, old creature came into the tent, who's probably the doctor.;\"Oho I see you are finally awake. Steak brought you here after you passed out. We took a look at your wound and treated it. It shouldn't be a big deal. Now if you could please wait for a moment.;\" The doctor went outside again.After some minutes the doctor came back in with Steak.;\"How are you feeling? Does anything hurt?\";\"No, at least not at the moment.\";\"I'm glad you're well. Oh, and about what I asked you before. Don't feel commited to answer that. The reason why I asked you about it, was because I am very curious and like to know more about others. Yet you can still tell me if you want to. Well enough of the chit chat, why don't I show you where you \nwill be sleeping?\";\"Uhmm yeah sure\".",
+      "next1": "9",
+      "next2": "-1",
+      "done": false,
+      "biteImpact": false
+    },
+    {
+      "id": 9,
+      "background": "Shelter.png",
+      "characterLeft": ["Steak.png","Steak.png"],
+      "characterRight": ["",""],
+      "speakingPerson": ["Mc","Steak"],
+      "text" : "We got out of the big tent and went to the sleeping area.;\"So, there is the area where we all sleep.You will be sleeping in the tent over there\" She pointed at the tent. \" There will be an old blanket as well as a pillow. Make yourself comfortable. I will be leaving now. Bye\"",
+      "next1" : "10",
       "next2" : "-1",
       "done" : false,
-      "isBitten": false
+      "biteImpact": false
+    },
+    {
+      "id": 10,
+      "background": "Zelt.png",
+      "characterLeft": ["","",""],
+      "characterRight": ["","",""],
+      "speakingPerson": ["Mc","Mc","Mc"],
+      "text": " I went into the tent and layed down.\"yawn\" Even though I was asleep until a few minutes ago I am already tired again. What can i say it was a long day.; What an eventfully day. Why did I wake up in an abounded village?What happened to my memories? Well at least I have somewhere to stay. I can't stop thinking about what will await me tomorrow.That's when i drove of to sleep.",
+      "next1": "11",
+      "next2": "-1",
+      "done": false,
+      "biteImpact": false
+    },
+    {
+      "id": 11,
+      "background": "ZeltMorning.png",
+      "characterLeft": ["","",""],
+      "characterRight": ["","",""],
+      "speakingPerson": ["Mc","Steak","Mc"],
+      "text": "I suddenly woke up, when hearing a pretty loud scream.;\"Hey [! It's time to wake up!\";*groan* \"Who is waking me up this early in the morning?\" I got up from my mattress and went out of the tent.",
+      "next1": "12",
+      "next2": "-1",
+      "done": false,
+      "biteImpact": false
+    },
+    {
+      "id": 12,
+      "background": "Shelter.png",
+      "characterLeft": ["",""],
+      "characterRight": ["",""],
+      "speakingPerson": ["Mc","Steak","Mc"],
+      "text": "I saw Steak standing outside waiting for me. So she was the one who woke me up.\n",
+      "next1": "13",
+      "next2": "-1",
+      "done": false,
+      "biteImpact": false
     }
   ]
 }

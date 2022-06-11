@@ -82,7 +82,7 @@ h2 {
   text-align: start;
   font-size: 2em;
   font-family: papyrus, fantasy;
-  padding-block-start: 0em;
+  padding-block-start: 0;
 }
 
 .margin {
@@ -168,11 +168,12 @@ button:hover {
 
 #RestartBtn {
   position: absolute;
+  visibility: hidden;
 }
 #EnterButton,
 .genderbtn {
   alignment: center;
-  display: inline-block;
+  display: none;
   position: absolute;
   margin: 12em 0 0 0;
   height: 2.5em;
@@ -238,18 +239,19 @@ button:hover {
   border: 1px solid whitesmoke;
 }
 
-#opt1{
+#opt1,
+#opt2{
   position: absolute;
-  margin: 12em 10em 0 0;
   height: 2.5em;
   z-index: 3;
+  visibility: hidden;
+}
+#opt1{
+  margin: 12em 10em 0 0;
 }
 
 #opt2{
-  position: absolute;
   margin: 12em 0 0 10em;
-  height: 2.5em;
-  z-index: 3;
 }
 
 #charLeft{

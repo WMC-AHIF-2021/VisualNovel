@@ -10,7 +10,7 @@ let McName;//dbjson: [
 let McPronouns1;//dbjson: {
 let McPronouns2;//dbjson: }
 let isBitten = false; //immer zweite anweisung wenn true
-const MAXSCENES = 40;
+const MAXSCENES = 13;
 let nextScene = 0;
 let buttonVisible = false;
 
@@ -33,21 +33,20 @@ class SceneManager {
         }
     }
 
-    public HandleTextBox() {
-        if(this.headScene.speakingPerson[0] == "Mc")
-        {
+    public ShowFirstTextAndSplit() {
+        if (this.headScene.speakingPerson[0] == "Mc") {
             document.getElementById("SpeakingPerson").innerText = McName;
-        }
-        else
-        {
+        } else {
             document.getElementById("SpeakingPerson").innerText = this.headScene.speakingPerson[0];
         }
+        console.log('splitting :)');
         this.splitText = this.headScene.text.split(";");
     }
 
     ChangeScene() {
         $("#background").attr("src", images[this.headScene.background]);
-        this.HandleTextBox();
+        this.ShowFirstTextAndSplit();
+        this.ShowCharacters(this.headScene,0);
     }
 
     DisplayText(i: number): number {
@@ -62,78 +61,37 @@ class SceneManager {
             buttonVisible = false;
         }
 
-
-        function ShowCharacters(headScene: Scene) {
-            if(headScene.characterLeft[i] != '')
-            {
-                const charLeft = <HTMLImageElement>document.getElementById("charLeft");
-                charLeft.src = charImages[headScene.characterLeft[i]];
-                charLeft.style.height = "29em";
-                charLeft.style.display = "inline-block";
-                charLeft.style.width = "20em";
-                charLeft.style.margin = "2em 0 0 15em";
-                charLeft.style.position = "absolute";
-            }
-            else
-            {
-                const charLeft = <HTMLImageElement>document.getElementById("charLeft");
-                charLeft.src = "";
-                charLeft.style.display = "none";
-            }
-            if(headScene.characterRight[i] != '')
-            {
-                const charRight = <HTMLImageElement>document.getElementById("charRight");
-                charRight.src = charImages[headScene.characterRight[i]];
-                charRight.style.height = "29em";
-                charRight.style.display = "inline-block";
-                charRight.style.width = "20em";
-                charRight.style.margin = "2rem 0 0 0";
-                charRight.style.padding = "0 30rem 0 0";
-                charRight.style.position = "absolute";
-            }
-            else
-            {
-                const charRight = <HTMLImageElement>document.getElementById("charRight");
-                charRight.src = "";
-                charRight.style.display = "none";
-            }
-        }
         if (i < this.splitText.length) {
             this.PrintNameAndGender();
             document.getElementById("textbox").innerText = this.splitText[i];
-            ShowCharacters(this.headScene);
-            if(this.headScene.speakingPerson[i] == "Mc")
-            {
+            this.ShowCharacters(this.headScene,i);
+            if (this.headScene.speakingPerson[i] == "Mc") {
                 document.getElementById("SpeakingPerson").innerText = McName;
-            }
-            else
-            {
+            } else {
                 document.getElementById("SpeakingPerson").innerText = this.headScene.speakingPerson[i];
             }
 
             i++;
             return i;
-        } else if (+this.headScene.next2 === -1 ) ///abprüfen ob es eine Verzweigung(Entscheidung) gibt
+        } else if (+this.headScene.next2 === -1) ///abprüfen ob es eine Verzweigung(Entscheidung) gibt
         {
             nextScene = +curScene.headScene.next1;
             curScene.headScene.done = true;
-            i=1;
+            i = 1;
             return 1;
-        }
-        else if(this.headScene.biteImpact){
-            if(isBitten){
+        } else if (this.headScene.biteImpact) {
+            if (isBitten) {
                 nextScene = +curScene.headScene.next1;
                 curScene.headScene.done = true;
-                i=1;
+                i = 1;
                 return 1;
             }
 
             nextScene = +curScene.headScene.next2;
             curScene.headScene.done = true;
-            i=1;
+            i = 1;
             return 1;
-        }
-        else {
+        } else {
             const opt1 = $('#opt1');
             const opt2 = $('#opt2');
             const splitter1 = this.headScene.next1.split(';');
@@ -148,8 +106,8 @@ class SceneManager {
             opt1.on('click', () => {
                 nextScene = +splitter1[0];
                 OptionClicked(opt1, opt2);
-                if(opt1.text() ==="Communicate"){
-                    isBitten =true;
+                if (opt1.text() === "Communicate") {
+                    isBitten = true;
                 }
             });
             opt2.on('click', () => {
@@ -159,15 +117,45 @@ class SceneManager {
             return 0;
         }
     }
-    private PrintNameAndGender(){
-        for(let i = 0; i < this.splitText.length; i++){
-            this.splitText[i] =this.splitText[i].replaceAll('{', McPronouns1);
+
+    private PrintNameAndGender() {
+        for (let i = 0; i < this.splitText.length; i++) {
+            this.splitText[i] = this.splitText[i].replaceAll('{', McPronouns1);
             this.splitText[i] = this.splitText[i].replaceAll('}', McPronouns2);
             this.splitText[i] = this.splitText[i].replaceAll('[', McName);
         }
     }
-}
 
+    private ShowCharacters(headScene: Scene, i : number) {
+        if (headScene.characterLeft[i] != '') {
+            const charLeft = <HTMLImageElement>document.getElementById("charLeft");
+            charLeft.src = charImages[headScene.characterLeft[i]];
+            charLeft.style.height = "29em";
+            charLeft.style.display = "inline-block";
+            charLeft.style.width = "20em";
+            charLeft.style.margin = "2em 0 0 15em";
+            charLeft.style.position = "absolute";
+        } else {
+            const charLeft = <HTMLImageElement>document.getElementById("charLeft");
+            charLeft.src = "";
+            charLeft.style.display = "none";
+        }
+        if (headScene.characterRight[i] != '') {
+            const charRight = <HTMLImageElement>document.getElementById("charRight");
+            charRight.src = charImages[headScene.characterRight[i]];
+            charRight.style.height = "29em";
+            charRight.style.display = "inline-block";
+            charRight.style.width = "20em";
+            charRight.style.margin = "2rem 0 0 0";
+            charRight.style.padding = "0 30rem 0 0";
+            charRight.style.position = "absolute";
+        } else {
+            const charRight = <HTMLImageElement>document.getElementById("charRight");
+            charRight.src = "";
+            charRight.style.display = "none";
+        }
+    }
+}
 
 
 function HideGenderElements() {
@@ -179,7 +167,7 @@ function HideGenderElements() {
     document.getElementById("SpeakingPerson").style.display = "inline-block";
 }
 
-function ManageName() {
+function ManageStart() {
     const enterButton = document.getElementById("EnterButton");
     enterButton.style.display = "none";
     const McName = document.getElementById("MCsName");
@@ -219,63 +207,60 @@ function ManageGender() {
     });
 }
 
-async function init() {
-    const opt1 = $('#opt1');
-    const opt2 = $('#opt2');
+async function ManageName() {
+
+    const name = <HTMLInputElement>document.getElementById("MCsName");
+    McName = name.value;
+    if (McName == "") {
+        alert("no Name entered");
+    } else if (McName.length > 18) {
+        alert("name too long");
+    } else {
+        document.getElementById("EnterButton").style.display = "none";
+        document.getElementById("MCsName").style.display = "none";
+        document.getElementById("EnterText").style.display = "none";
+        ManageGender();
+        await WorkOnScenes();
+    }
+
+
+}
+
+
+async function WorkOnScenes() {
     const restart = $('#RestartBtn');
-    restart.css('position','absolute')
-    restart.css('visibility', 'hidden');
-    opt1.css('visibility', 'hidden');
-    opt2.css('visibility', 'hidden');
-    ManageName();
-    document.getElementById("EnterButton").addEventListener("click", async () => {
-        const name = <HTMLInputElement>document.getElementById("MCsName");
-        McName = name.value;
-        if(McName == "")
-        {
-            alert("no Name entered");
-        }
-        else if(McName.length > 18)
-        {
-            alert("name too long");
-        }
-        else
-        {
-            document.getElementById("EnterButton").style.display = "none";
-            document.getElementById("MCsName").style.display = "none";
-            document.getElementById("EnterText").style.display = "none";
-            ManageGender();
-
-            curScene = new SceneManager();
-            await curScene.readScene();
-            await curScene.ChangeScene();
-            document.getElementById("textbox").innerText = curScene.splitText[0];
-            let i = 1;
-            const elementsOfClickable = document.getElementsByClassName("clickable");
-            for(let count =0;count<elementsOfClickable.length;count++){
-                elementsOfClickable[count].addEventListener("click",async ()=>{
-                    if (nextScene >= MAXSCENES) {
-                        ///TODO! Ending
-
-                        restart.css('visibility', 'visible');
-                        restart.on('click',()=>{
-                            location.reload();
-                        });
-                    }
-                    else {
-                        if (!buttonVisible) {
-                            i = curScene.DisplayText(i);
-                        }
-                        if (curScene.headScene.done == true && nextScene < MAXSCENES) {
-                            await curScene.readScene();
-                            await curScene.ChangeScene();
-                            document.getElementById("textbox").innerText = curScene.splitText[0];
-                        }
-                    }
-                });
+    curScene = new SceneManager();
+    await curScene.readScene();
+    curScene.ChangeScene();
+    document.getElementById("textbox").innerText = curScene.splitText[0];
+    let i = 1;
+    const elementsOfClickable = document.getElementsByClassName("clickable");
+    for (let count = 0; count < elementsOfClickable.length; count++) {
+        elementsOfClickable[count].addEventListener("click", async () => {
+            if (nextScene >= MAXSCENES) {
+                ///TODO! Ending
+            } else {
+                if (!buttonVisible) {
+                    i = curScene.DisplayText(i);
+                }
+                if (curScene.headScene.done == true && nextScene < MAXSCENES) {
+                    await curScene.readScene();
+                    await curScene.ChangeScene();
+                    console.log('changed scene');
+                    document.getElementById("textbox").innerText = curScene.splitText[0];
+                }
             }
-        }
+        });
+    }
+
+}
+
+async function init() {
+    ManageStart();
+    document.getElementById("EnterButton").addEventListener("click", () => {
+        ManageName();
     });
+
 }
 
 document.addEventListener("DOMContentLoaded", async () => {

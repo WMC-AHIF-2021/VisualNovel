@@ -17,8 +17,6 @@ export class HttpClient {
   private readonly sceneGeneralUrl: string = `${this.baseUrl}/scenes`;
 
   public async getScene(id: number): Promise<Scene> {
-    const scene = <Scene>await $.get(`${this.sceneGeneralUrl}/${id}`);
-    console.log(scene);
-    return scene;
+    return <Scene>await $.get(`${this.sceneGeneralUrl}/${id}`);
   }
 }
