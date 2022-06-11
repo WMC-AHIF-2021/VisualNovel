@@ -222,8 +222,6 @@ async function ManageName() {
         ManageGender();
         await WorkOnScenes();
     }
-
-
 }
 
 
@@ -238,7 +236,17 @@ async function WorkOnScenes() {
     for (let count = 0; count < elementsOfClickable.length; count++) {
         elementsOfClickable[count].addEventListener("click", async () => {
             if (nextScene >= MAXSCENES) {
-                ///TODO! Ending
+                $("#background").attr("src", images['endScreen.png']);
+                $("#textbox").css("visibility","hidden");
+                $("#SpeakingPerson").css("visibility","hidden");
+                $("#background").removeClass('clickable');
+                $("#background").on('click', () => {
+                    $("#background").attr("src", images['blackScreen.png']);
+                    restart.css('visibility', 'visible');
+                });
+                restart.on('click', () => {
+                    location.reload();
+                });
             } else {
                 if (!buttonVisible) {
                     i = curScene.DisplayText(i);
