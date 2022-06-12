@@ -11,7 +11,8 @@ body {
 #disclaimer-banner {
   width: 100%;
   overflow: hidden;
-  background-color: rgba(255,255,255,8.7) !important;
+  opacity: 70%;
+  background: rgba(255, 255, 255, 0.7) !important;
   color: #3f5466;
 }
 
