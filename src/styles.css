@@ -1,4 +1,6 @@
 body {
+  display: flex;
+  flex-direction: column;
   background-image: url("../images/backgrounds/wald2_5.png");
   background-size: cover;
   background-attachment: fixed;
@@ -12,7 +14,7 @@ body {
   width: 100%;
   overflow: hidden;
   opacity: 70%;
-  background: #ffffffb0 !important;
+  background: rgba(255, 255, 255, 0.7) !important;
   color: #3f5466;
 }
 
@@ -63,7 +65,7 @@ td {
 
 .navigationBar {
   list-style-type: none;
-  margin: -0.5em;
+  margin: 0;
   padding: 0;
   overflow: hidden;
   background-color: rgb(96, 84, 94);
