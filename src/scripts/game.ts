@@ -9,8 +9,8 @@ let curScene: SceneManager;
 let McName;//dbjson: [
 let McPronouns1;//dbjson: {
 let McPronouns2;//dbjson: }
-let isBitten = false; //immer zweite anweisung wenn true
-const MAXSCENES = 13;
+let isBitten = false; //immer erste anweisung wenn true
+const MAXSCENES = 50;
 let nextScene = 0;
 let buttonVisible = false;
 
@@ -49,15 +49,12 @@ class SceneManager {
         this.ShowCharacters(this.headScene,0);
     }
 
-    DisplayText(i: number): number {
+    DisplaySceneParts(i: number): number {
 
         function OptionClicked(opt1: JQuery, opt2: JQuery) {
             curScene.headScene.done = true;
             opt1.css('visibility', 'hidden');
             opt2.css('visibility', 'hidden');
-
-            opt1.remove();
-            opt2.remove();
             buttonVisible = false;
         }
 
@@ -77,30 +74,28 @@ class SceneManager {
         {
             nextScene = +curScene.headScene.next1;
             curScene.headScene.done = true;
-            i = 1;
             return 1;
         } else if (this.headScene.biteImpact) {
             if (isBitten) {
                 nextScene = +curScene.headScene.next1;
                 curScene.headScene.done = true;
-                i = 1;
                 return 1;
             }
 
             nextScene = +curScene.headScene.next2;
             curScene.headScene.done = true;
-            i = 1;
             return 1;
         } else {
             const opt1 = $('#opt1');
             const opt2 = $('#opt2');
             const splitter1 = this.headScene.next1.split(';');
             const splitter2 = this.headScene.next2.split(';');
-            opt1.css('visibility', 'visible');
-            opt2.css('visibility', 'visible');
             buttonVisible = true;
+            console.log(splitter1[1]);
             opt1.text(splitter1[1]);
             opt2.text(splitter2[1]);
+            opt1.css('visibility', 'visible');
+            opt2.css('visibility', 'visible');
 
 
             opt1.on('click', () => {
@@ -193,16 +188,16 @@ function ManageGender() {
     document.getElementById("fembtn").addEventListener("click", () => {
         McPronouns1 = "she";
         McPronouns2 = "her";
-        HideGenderElements(); // stellt Sichtbarkeit aus
+        HideGenderElements();
     });
     document.getElementById("malebtn").addEventListener("click", () => {
         McPronouns1 = "he";
-        McPronouns2 = "his";
+        McPronouns2 = "him";
         HideGenderElements();
     });
     document.getElementById("divbtn").addEventListener("click", () => {
         McPronouns1 = "they";
-        McPronouns2 = "their";
+        McPronouns2 = "them";
         HideGenderElements();
     });
 }
@@ -236,11 +231,12 @@ async function WorkOnScenes() {
     for (let count = 0; count < elementsOfClickable.length; count++) {
         elementsOfClickable[count].addEventListener("click", async () => {
             if (nextScene >= MAXSCENES) {
-                $("#background").attr("src", images['endScreen.png']);
+                const background = $("#background");
+                background.attr("src", images['endScreen.png']);
                 $("#textbox").css("visibility","hidden");
                 $("#SpeakingPerson").css("visibility","hidden");
-                $("#background").removeClass('clickable');
-                $("#background").on('click', () => {
+                background.removeClass('clickable');
+                background.on('click', () => {
                     $("#background").attr("src", images['blackScreen.png']);
                     restart.css('visibility', 'visible');
                 });
@@ -249,7 +245,7 @@ async function WorkOnScenes() {
                 });
             } else {
                 if (!buttonVisible) {
-                    i = curScene.DisplayText(i);
+                    i = curScene.DisplaySceneParts(i);
                 }
                 if (curScene.headScene.done == true && nextScene < MAXSCENES) {
                     await curScene.readScene();
