@@ -5,7 +5,24 @@ body {
   background-repeat: no-repeat;
   font-family: Candara, fantasy;
   opacity: 85;
+  margin: 0;
 }
+
+#disclaimer-banner {
+  width: 100%;
+  overflow: hidden;
+  background-color: rgba(255,255,255,8.7) !important;
+  color: #3f5466;
+}
+
+#disclaimer-banner a {
+  font-size: 1.25rem;
+}
+
+#disclaimer-banner p {
+  font-size: 1.25rem;
+}
+
 p {
   font-size: 1.5em;
 }
@@ -219,7 +236,7 @@ button:hover {
   display: none;
   background: #000;
   color: #fff;
-  opacity: 50%;
+  opacity: 70%;
   position: absolute;
   width: 50em;
   height: 7.5em;
