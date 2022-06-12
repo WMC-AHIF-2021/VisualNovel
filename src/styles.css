@@ -1,11 +1,31 @@
 body {
+  display: flex;
+  flex-direction: column;
   background-image: url("../images/backgrounds/wald2_5.png");
   background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
   font-family: Candara, fantasy;
   opacity: 85;
+  margin: 0;
 }
+
+#disclaimer-banner {
+  width: 100%;
+  overflow: hidden;
+  opacity: 70%;
+  background: rgba(255, 255, 255, 0.7) !important;
+  color: #3f5466;
+}
+
+#disclaimer-banner a {
+  font-size: 1.25rem;
+}
+
+#disclaimer-banner p {
+  font-size: 1.25rem;
+}
+
 p {
   font-size: 1.5em;
 }
@@ -45,7 +65,7 @@ td {
 
 .navigationBar {
   list-style-type: none;
-  margin: -0.5em;
+  margin: 0;
   padding: 0;
   overflow: hidden;
   background-color: rgb(96, 84, 94);
@@ -219,7 +239,7 @@ button:hover {
   display: none;
   background: #000;
   color: #fff;
-  opacity: 50%;
+  opacity: 70%;
   position: absolute;
   width: 50em;
   height: 7.5em;
