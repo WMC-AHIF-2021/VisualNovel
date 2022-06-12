@@ -188,6 +188,18 @@
       "biteImpact": false
     },
     {
+      "id": 17,
+      "background": "kingdom.png",
+      "characterLeft": ["monsterKing.png","monsterKing.png"],
+      "characterRight": ["",""],
+      "speakingPerson": ["Mc","???"],
+      "text": "A tall handsome guy with long blond hair and sharp red eyes who looks like a noble made his way to me.;\"What is someone like you doing here alone? Don't you know that this is the kingdom of the monsters?\"",
+      "next1": "19",
+      "next2": "-1",
+      "done": false,
+      "biteImpact": false
+    },
+    {
       "id": 18,
       "background": "kingdom.png",
       "characterLeft": ["monsterKing.png","monsterKing.png","monsterKing.png","monsterKing.png","monsterKing.png","monsterKing.png","monsterKing.png"],
@@ -195,6 +207,18 @@
       "speakingPerson": ["Mc","Ajax","Mc","Mc","Ajax","Mc","Ajax"],
       "text": "\"I accept it\". Ajax gave me the antidote and i drank it.; \"You should better head back. Humans aren't really welcome here.\"; Ajax was about to go back in the castle, but i spoke up; \"Hold on! I dont belong here. I'm not part of the village. Do you know how i can go back to my world?\"; Is that supposed to be some kind of trap or is the person just stupid? Its better if { go home. I dont want } to cause any trouble. \"A way to another world? Never heard of that.\";\"*sigh* well it was worth a try. Thank you for the antidote I'm really grateful. I will go back now\"I started to make my way back to shelter.;Ajax smirked. I'm the one that has to thank you.",
       "next1": "20",
+      "next2": "-1",
+      "done": false,
+      "biteImpact": false
+    },
+    {
+      "id": 19,
+      "background": "kingdom.png",
+      "characterLeft": ["","","","","","vita.png","vita.png","vita.png","vita.png","vita.png"],
+      "characterRight": ["monsterKing.png","monsterKing.png","monsterKing.png","monsterKing.png","monsterKing.png","monsterKing.png","monsterKing.png","","",""],
+      "speakingPerson": ["Mc","Ajax","Mc","Ajax","Mc","Vita","Ajax","Mc","Vita","Mc"],
+      "text": "\"No I don't. I actually came here because this place looks interesting and I'm looking for a way home. Do you maybe know how i can come to another world? And who even are you?\";\"I'm Ajax, but what are you even talking about? You want to go to another world? Why are you asking me?\";You began to explain your situation to him.;\"You really think I am just going to believe that? I'm not stupid you know.\"; I continued to argue with him for like ages when i suddenly heard a familiar voice;\" [ why did you run off and go here?! You aren't supposed to be here. We aren't allowed to go to the kingdom. I'm really sorry king Ajax.\"; \"Wait you are with them and not with the village? Is what you said really true then human?Hmm I shall show you a way back, but only if you do something for me. You as a human could perfectly spy on the village. Yeah if you spy on it and give me some information I will let you go through my portal. Deal?\";What?! He really knows how i can get back? That makes me so happy, but of course that sneaky guy wants something in return. Well its not too hard, is it? \"Its a Deal then.\"Ajax went back into the castle. I turned to Vita. \"ehehe...I know you just found me but you can go home now. I will immediately go to the village and spy, its better if less people are involved. I'm sorry for causing you so much trouble by running off.\";I had to chuckle a little.\" You really are a handful, aren't you? Take care and don't try to get hurt. You better tell me and the others before you go back to your homeland\";\"Don't worry. I will! Byee!\".Now i have to make my way to the human village.",
+      "next1": "26",
       "next2": "-1",
       "done": false,
       "biteImpact": false
@@ -270,7 +294,90 @@
       "next2": "-1",
       "done":false,
       "biteImpact": false
+    },
+    {
+      "id": 26,
+      "background": "Menschendorf.png",
+      "characterLeft": ["","","",""],
+      "characterRight": ["","","",""],
+      "speakingPerson": ["Mc","Mc","villager","Mc"],
+      "text": "I finally managed to find the village. I felt a little uneasy entering it. Nobody could ever know that I'm supposed to spy on them, yet the anxiety as well as the thrill is still there.;You can clearly see that there's a war going on. Many houses are destroyed and there's broken glass and blood on the ground, still the church couldn't look better heh. I looked through one of the windows in the church. Some people where in there. I tried to listen to what they were saying.;\"Tomorrow evening we are going to attack the kingdom! And we will defeat them with our own Monsters!\";Oh! That's the information I needed.Now its time for me to go back to shelter and if everything goes smoothly I will be back home by tommorrow. I'm so excited!",
+      "next1": "27",
+      "next2": "28",
+      "done": false,
+      "biteImpact": true
+    },
+    {
+      "id": 27,
+      "background": "blackScreen.png",
+      "characterLeft": ["",""],
+      "characterRight": ["",""],
+      "speakingPerson": ["Mc","Mc"],
+      "text": "on my way back i suddenly started to feel dizzy..my eyes slowly started to close and i feel to the ground;You died. Seems like the bite wasn't that harmless...",
+      "next1": "70",
+      "next2": "-1",
+      "done": false,
+      "biteImpact": false
+    },
+    {
+      "id": 28,
+      "background": "Zelt.png",
+      "characterLeft": [""],
+      "characterRight": [""],
+      "speakingPerson": ["Mc"],
+      "text": "It's nice to be back and finally able to rest. Maybe i shouldn't just have ran of, but at least i found a way how to get home. I realize that this will be my last night here. Steak, Vita and the others in shelter were all so friendly. I will sure miss them. Then i drifted of to sleep.",
+      "next1": "29",
+      "next2": "-1",
+      "done": false,
+      "biteImpact": false
+    },
+    {
+      "id": 29,
+      "background": "ZeltMorning.png",
+      "characterLeft": [""],
+      "characterRight": [""],
+      "speakingPerson": ["Mc"],
+      "text": "I woke up earlier than usual.I made my way out of the tent to meet up with Vita and Steak",
+      "next1": "30",
+      "next2": "-1",
+      "done": false,
+      "biteImpact": false
+    },
+    {
+    "id": 30,
+    "background": "Shelter.png",
+    "characterLeft": ["Vita.png","Vita.png","Vita.png"],
+    "characterRight": ["Steak.png","Steak.png","Steak.png"],
+    "speakingPerson": ["Mc","Steak","Mc"],
+    "text": "As I went out of the tent I already saw Vita and Steak in the distance.;\"Hey [! Vita told me everything yesterday. I'm so happy for you! You want us to accompany you?\";I noded \"Yeah lets go.\" We made our way up to the castle",
+    "next1": "31",
+    "next2": "-1",
+    "done": false,
+    "biteImpact": false
+    },
+    {
+      "id": 31,
+      "background": "kingdom.png",
+      "characterLeft": ["monsterKing.png","monsterKing.png","Vita.png"],
+      "characterRight": ["","","Steak.png"],
+      "speakingPerson": ["Mc","Ajax","Mc"],
+      "text": "When we reached the castle Ajax was already waiting for us.\"Ajax get your portal ready, because i got some information for you! The humans from the village plan an attack today evening. They even have some monsters themselves and are determined that they will win\"; \"I see..interesting. today is pretty unfortunate, but it can't be helped. They won't win against us anyways. Well you fulfilled your part of the deal, now its my turn. The portal is in the castle. You just have to go straight forward.\";\"Thank you Ajax.\" Then i turned to Vita and Steak\"I owe the both of you so much. You took me in when i didn't have a place to stay. I'm so grateful. I wish for all of you to have a nice life and for the war to end soon.\" I gave them a sad smile and went into the portal.",
+      "next1": "32",
+      "next2": "-1",
+      "done": false,
+      "biteImpact": false
+    },
+    {
+      "id": 32,
+      "background": "blackScreen.png",
+      "characterLeft": [""],
+      "characterRight": [""],
+      "speakingPerson": ["Mc"],
+      "text": "You went back to your world and family. You remember everything now. The adventure you had in the other world will always remain as a nice and interesting memory",
+      "next1": "71",
+      "next2": "-1",
+      "done": false,
+      "biteImpact": false
     }
-
   ]
 }
