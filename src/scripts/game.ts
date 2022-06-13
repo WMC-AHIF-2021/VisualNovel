@@ -41,6 +41,7 @@ class SceneManager {
         }
         console.log('splitting :)');
         this.splitText = this.headScene.text.split(";");
+
     }
 
     ChangeScene() {
@@ -251,6 +252,9 @@ async function WorkOnScenes() {
                     await curScene.readScene();
                     await curScene.ChangeScene();
                     console.log('changed scene');
+                    curScene.splitText[0] = curScene.splitText[0].replaceAll('{', McPronouns1);
+                    curScene.splitText[0] = curScene.splitText[0].replaceAll('}', McPronouns2);
+                    curScene.splitText[0] = curScene.splitText[0].replaceAll('[', McName);
                     document.getElementById("textbox").innerText = curScene.splitText[0];
                 }
             }
