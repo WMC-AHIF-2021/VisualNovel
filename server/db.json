@@ -499,7 +499,7 @@
       "characterLeft": ["vita.png","vita.png","vita.png","vita.png"],
       "characterRight": ["Steak.png","Steak.png","Steak.png","Steak.png"],
       "speakingPerson": ["Mc","Steak","Mc","Mc"],
-      "text": "Humans rushed up the mountain and started to attack the monsters living here. Oh no! Why is this happening now! We made our way inside to search for the portal.;\"Look! There's the portal!\"; The portal was in sight! But then I saw a royal-looking monster getting stabbed. Was that the king? I turned my head back to the portal. It was flickering now! I rushed my way to the portal when I saw that a monster was about to attack Vita! Steak also suddenly vanished.; I better help Vita, but I have to go trough the portal if I want to get home... ",
+      "text": "Humans rushed up the mountain and started to attack the monsters living here. Oh no! Why is this happening now?! We made our way inside to search for the portal.;\"Look! There's the portal!\"; The portal was in sight! But then I saw a royal-looking monster getting stabbed. Was that the king? I turned my head back to the portal. It was flickering now! I rushed my way to the portal when I saw that a monster was about to attack Vita! Steak also suddenly vanished.; I better help Vita, but I have to go trough the portal if I want to get home... ",
       "next1": "42;Help Vita",
       "next2": "43;Go through",
       "done": false,
