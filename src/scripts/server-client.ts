@@ -13,7 +13,7 @@ export interface Scene {
 }
 
 export class HttpClient {
-  private readonly baseUrl: string = "http://10.9.15.18:5000"; //http://10.9.15.18:5000
+  private readonly baseUrl: string = "https://10.9.15.18:5000"; //http://10.9.15.18:5000 //http://localhost:3000
   private readonly sceneGeneralUrl: string = `${this.baseUrl}/scenes`;
 
   public async getScene(id: number): Promise<Scene> {
