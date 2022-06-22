@@ -1,5 +1,9 @@
 # Visual Novel
 
+## Slogan
+"What will you do, in this unknown world?"
+
+Torn into another world you have to survive in our self drawn game by making decisions.
 ## Project Description
 
 * Static Part
