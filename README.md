@@ -3,7 +3,7 @@
 ## Slogan
 "What will you do, in this unknown world?"
 
-Torn into another world you have to survive in our self drawn game by making decisions.
+Torn from reality, you have to survive our hand-drawn game by making your own choices.
 ## Project Description
 
 * Static Part
