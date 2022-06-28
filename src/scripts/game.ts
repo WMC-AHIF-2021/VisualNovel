@@ -193,12 +193,12 @@ function ManageGender() {
     });
     document.getElementById("malebtn").addEventListener("click", () => {
         McPronouns1 = "he";
-        McPronouns2 = "him";
+        McPronouns2 = "his";
         HideGenderElements();
     });
     document.getElementById("divbtn").addEventListener("click", () => {
         McPronouns1 = "they";
-        McPronouns2 = "them";
+        McPronouns2 = "their";
         HideGenderElements();
     });
 }
