@@ -1,0 +1,289 @@
+body {
+  opacity: 85;
+  background-image: url("wald2_5.2e2a3a17.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  flex-direction: column;
+  margin: 0;
+  font-family: Candara, fantasy;
+  display: flex;
+}
+
+#disclaimer-banner {
+  width: 100%;
+  opacity: .7;
+  color: #3f5466;
+  overflow: hidden;
+  background: #ffffffb3 !important;
+}
+
+#disclaimer-banner a, #disclaimer-banner p {
+  font-size: 1.25rem;
+}
+
+p, h3 {
+  font-size: 1.5em;
+}
+
+.usPics {
+  width: 17em;
+  height: 17em;
+  float: left;
+}
+
+td {
+  padding-top: 2em;
+}
+
+.centered-menu {
+  text-align: center;
+}
+
+.map {
+  width: 67em;
+  height: 42em;
+  float: none;
+  max-width: calc(100% - 2rem);
+  margin-right: 3em;
+}
+
+.ChDescImg {
+  width: 17em;
+  height: 24em;
+  float: left;
+  background-color: #d9e0ff57;
+  border: 2px solid #000;
+  margin-right: 3em;
+}
+
+.navigationBar {
+  background-color: #60545e;
+  margin: 0;
+  padding: 0;
+  font-size: 17px;
+  list-style-type: none;
+  overflow: hidden;
+}
+
+li {
+  text-align: left;
+  padding-left: 2em;
+  padding-right: 2em;
+  display: inline-block;
+}
+
+li a {
+  color: #cce8e1;
+  text-align: center;
+  padding: 25px;
+  text-decoration: none;
+  display: block;
+}
+
+#vita img:last-child {
+  display: none;
+}
+
+#vita:hover img:last-child {
+  display: block;
+}
+
+#vita:hover img:first-child {
+  display: none;
+}
+
+li a:hover {
+  background-color: #4a0f39;
+}
+
+.whiteBox {
+  background-color: #f5f5f5a9;
+  margin: 5em;
+  padding-bottom: .5em;
+}
+
+h2 {
+  color: #3f5466;
+  text-align: start;
+  padding-block-start: 0;
+  font-family: papyrus, fantasy;
+  font-size: 2em;
+}
+
+.margin {
+  margin: 2em;
+  font-size: 17px;
+}
+
+.centered {
+  text-align: center;
+}
+
+.indexTitle {
+  text-align: center;
+  color: #3f5466;
+  font-family: papyrus, fantasy;
+  font-size: 10em;
+  top: 3em;
+}
+
+.othersTitle {
+  color: #3f5466;
+  font-family: papyrus, fantasy;
+  font-size: 4em;
+}
+
+button {
+  text-align: center;
+  color: #d2f5ed;
+  margin-inline: 1em;
+  width: 9em;
+  height: 3.5em;
+  background-color: #60545e;
+  border-radius: 6px;
+  margin-bottom: 2em;
+  font-family: Candara, fantasy;
+  font-size: 33px;
+  display: inline-block;
+}
+
+button:hover {
+  background-color: #4a0f39;
+  box-shadow: 0 8px 16px #0003, 0 6px 20px #00000030;
+}
+
+#loadingscreen {
+  min-height: 95vh;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.loader {
+  color: #fff;
+  font-family: ZCOOL KuaiLe, cursive;
+  font-size: 40px;
+}
+
+.loader:after {
+  content: "…";
+  vertical-align: bottom;
+  width: 0;
+  animation: dots 2s steps(4, end) infinite;
+  display: inline-block;
+  overflow: hidden;
+}
+
+@keyframes dots {
+  to {
+    width: 1em;
+  }
+}
+
+.Start {
+  height: 30em;
+  margin-top: 3em;
+}
+
+#StartingBtn {
+  alignment: center;
+  margin: 1em 0 0;
+  position: absolute;
+}
+
+#RestartBtn {
+  visibility: hidden;
+  position: absolute;
+}
+
+#EnterButton, .genderbtn {
+  alignment: center;
+  height: 2.5em;
+  width: 8em;
+  margin: 12em 0 0;
+  display: none;
+  position: absolute;
+}
+
+.genderbtn {
+  height: 2em;
+  display: none;
+}
+
+#fembtn {
+  margin-top: 2em;
+}
+
+#malebtn {
+  margin-top: 7em;
+}
+
+#MCsName {
+  alignment: center;
+  height: 2em;
+  width: 17em;
+  margin: 15em 0 0;
+  position: absolute;
+}
+
+#EnterText, #gendertext {
+  alignment: center;
+  color: #d2f5ed;
+  margin: -5em 0 0;
+  position: absolute;
+}
+
+.container-md {
+  place-content: center;
+  align-items: center;
+  display: flex;
+}
+
+#textbox {
+  color: #fff;
+  opacity: .7;
+  width: 50em;
+  height: 7.5em;
+  background: #000;
+  margin-top: 23em;
+  padding: .5em;
+  display: none;
+  position: absolute;
+}
+
+#SpeakingPerson {
+  color: #fff;
+  opacity: .7;
+  width: 10em;
+  text-align: center;
+  background: #000;
+  border: 1px solid #f5f5f5;
+  margin-top: 12em;
+  display: none;
+  position: absolute;
+}
+
+#opt1, #opt2 {
+  height: 2.5em;
+  z-index: 3;
+  visibility: hidden;
+  position: absolute;
+}
+
+#opt1 {
+  margin: 12em 10em 0 0;
+}
+
+#opt2 {
+  margin: 12em 0 0 10em;
+}
+
+#charLeft {
+  width: 20em;
+  margin: 4em 0 0 15em;
+  display: inline-block;
+  position: absolute;
+}
+
+/*# sourceMappingURL=index.c00d1c1e.css.map */

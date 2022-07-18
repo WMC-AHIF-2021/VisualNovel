@@ -1,0 +1,1 @@
+{"mappings":"AAAA","sources":["src/historyStyles.css"],"sourcesContent":[".VNPictures {\n  margin-left: 2em;\n  margin-top: 2em;\n  margin-bottom: 2em;\n  width: 25em;\n  height: 20em;\n  float: none;\n  max-width: calc(100% - 15rem);\n}\n"],"names":[],"version":3,"file":"VisualNovel-history.043b9601.css.map"}
